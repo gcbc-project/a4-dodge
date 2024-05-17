@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "AttackSO", menuName = "Scriptable Object/Attack/Default", order = 0)]
@@ -7,4 +8,15 @@ public class AttackSO : ScriptableObject
     public float ATK;
     public float CoolTime;
     public LayerMask Target;
+
+    public virtual AttackSO DeepCopy()
+    {
+        AttackSO newAttackSO = (AttackSO)Activator.CreateInstance(GetType());
+
+        newAttackSO.ATK = this.ATK;
+        newAttackSO.CoolTime = this.CoolTime;
+        newAttackSO.Target = this.Target;
+             
+        return newAttackSO;
+    }
 }
