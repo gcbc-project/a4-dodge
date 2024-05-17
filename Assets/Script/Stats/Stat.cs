@@ -15,6 +15,7 @@ public class Stat
     [Range(1, 100)] public int MaxHP;
     [Range(1, 100)] public int MaxMP;
     [Range(1f, 20f)] public float Speed;
+    [Range(1f, 10f)] public float DashSpeed;
     [Range(1f, 5f)] public float DashCoolTime;
     public AttackSO AttackData;
 
@@ -26,6 +27,7 @@ public class Stat
         newStat.MaxHP = this.MaxHP;
         newStat.MaxMP = this.MaxMP;
         newStat.Speed = this.Speed;
+        newStat.DashSpeed = this.DashSpeed;
         newStat.DashCoolTime = this.DashCoolTime;
 
         if (this.AttackData != null)
@@ -41,6 +43,7 @@ public class Stat
         this.MaxHP += stat.MaxHP;
         this.MaxMP += stat.MaxMP;
         this.Speed += stat.Speed;
+        this.DashSpeed += stat.DashSpeed;
         this.DashCoolTime += stat.DashCoolTime;
         if (stat.AttackData != null)
         {
@@ -53,6 +56,7 @@ public class Stat
         this.MaxHP *= stat.MaxHP;
         this.MaxMP *= stat.MaxMP;
         this.Speed *= stat.Speed;
+        this.DashSpeed *= stat.DashSpeed;
         this.DashCoolTime *= stat.DashCoolTime;
         if (stat.AttackData != null)
         {
@@ -65,6 +69,7 @@ public class Stat
         this.MaxHP = stat.MaxHP;
         this.MaxMP = stat.MaxMP;
         this.Speed = stat.Speed;
+        this.DashSpeed = stat.DashSpeed;
         this.DashCoolTime = stat.DashCoolTime;
         if (stat.AttackData != null)
         {
