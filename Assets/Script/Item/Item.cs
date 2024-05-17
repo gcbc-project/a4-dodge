@@ -1,12 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class Item : MonoBehaviour
 {
     protected int _playerLayer = LayerMask.GetMask("Player");
 
-    public abstract void Effect(Collider collision);
+    protected abstract void Effect(Collider collision);
 
     private void OnTriggerEnter(Collider collision)
     {

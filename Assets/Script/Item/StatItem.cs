@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class StatItem : Item
@@ -7,7 +5,7 @@ public class StatItem : Item
     [SerializeField] private Stat _effectStat;
     private CharacterStatHandler _characterStatHandler;
 
-    public override void Effect(Collider collision)
+    protected override void Effect(Collider collision)
     {
         _characterStatHandler = collision.GetComponent<CharacterStatHandler>();
 
