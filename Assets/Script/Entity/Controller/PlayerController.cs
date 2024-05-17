@@ -3,23 +3,27 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : EntityController
 {
-    public void OnMove(InputValue value)
+    private void OnMove(InputValue value)
     {
-        Debug.Log("움직임");
+        Vector2 direction = value.Get<Vector2>();
+        if (direction != null)
+        {
+            CallMoveEvent(direction);
+        }
     }
 
-    public void OnLook(InputValue value)
+    private void OnLook(InputValue value)
     {
         Debug.Log("마우스 움직임");
     }
 
-    public void OnDash(InputValue value)
+    private void OnDash(InputValue value)
     {
         Debug.Log("Shift");
     }
 
-    public void OnAttack(InputValue value)
+    private void OnAttack(InputValue value)
     {
-        Debug.Log("공격");
+        CallAttackEvent();
     }
 }
