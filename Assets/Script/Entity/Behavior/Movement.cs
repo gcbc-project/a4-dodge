@@ -10,12 +10,15 @@ public class Movement : MonoBehaviour
     private bool _isDashing = false;
     private Vector2 _direction;
 
-    void Start()
+    private void Awake()
     {
         _controller = GetComponent<EntityController>();
         _characterStateHandler = GetComponent<CharacterStatHandler>();
         _rgbd = GetComponent<Rigidbody2D>();
+    }
 
+    void Start()
+    {
         _controller.OnMoveEvent += Move;
         _controller.OnDashEvent += Dash;
     }
@@ -29,7 +32,7 @@ public class Movement : MonoBehaviour
     private void ApplyMovement(Vector2 direction)
     {
         float currentDashSpeed = _isDashing ? _characterStateHandler.CurrentStat.DashSpeed : 1f;
-        _rgbd.velocity = direction * _characterStateHandler.CurrentStat.Speed * currentDashSpeed; // * Time.fixedDeltaTime
+        _rgbd.velocity = direction * _characterStateHandler.CurrentStat.Speed * currentDashSpeed * Time.fixedDeltaTime * 100f;
     }
     private void ApplyDash()
     {
