@@ -16,7 +16,8 @@ public class Stat
     [Range(1, 100)] public int MaxMP;
     [Range(1f, 20f)] public float Speed;
     [Range(1f, 10f)] public float DashSpeed;
-    [Range(0f, 5f)] public float DashCoolTime;
+    [Range(1f, 5f)] public float DashCoolTime;
+    [Range(0f, 5f)] public float DashHoldTime;
     public AttackSO AttackData;
 
     public virtual Stat DeepCopy()
@@ -29,6 +30,7 @@ public class Stat
         newStat.Speed = this.Speed;
         newStat.DashSpeed = this.DashSpeed;
         newStat.DashCoolTime = this.DashCoolTime;
+        newStat.DashHoldTime = this.DashHoldTime;
 
         if (this.AttackData != null)
         {
@@ -45,6 +47,7 @@ public class Stat
         this.Speed += stat.Speed;
         this.DashSpeed += stat.DashSpeed;
         this.DashCoolTime += stat.DashCoolTime;
+        this.DashHoldTime += stat.DashHoldTime;
         if (stat.AttackData != null)
         {
             this.AttackData.Add(stat.AttackData);
@@ -58,6 +61,7 @@ public class Stat
         this.Speed *= stat.Speed;
         this.DashSpeed *= stat.DashSpeed;
         this.DashCoolTime *= stat.DashCoolTime;
+        this.DashHoldTime *= stat.DashHoldTime;
         if (stat.AttackData != null)
         {
             this.AttackData.Multiple(stat.AttackData);
@@ -71,6 +75,7 @@ public class Stat
         this.Speed = stat.Speed;
         this.DashSpeed = stat.DashSpeed;
         this.DashCoolTime = stat.DashCoolTime;
+        this.DashHoldTime = stat.DashHoldTime;
         if (stat.AttackData != null)
         {
             this.AttackData.Override(stat.AttackData);
