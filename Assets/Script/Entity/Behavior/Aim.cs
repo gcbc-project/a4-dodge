@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Aim : MonoBehaviour
 {   
-    [SerializeField] private Transform ArmPivot;
+    [SerializeField] private Transform _ArmPivot;
 
     private EntityController _controller;
 
@@ -16,6 +16,6 @@ public class Aim : MonoBehaviour
     private void OnAim(Vector2 direction)
     {
         float rotZ = MathF.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;              
-        ArmPivot.rotation = Quaternion.Euler(0, 0, rotZ);
+        _ArmPivot.rotation = Quaternion.Euler(0, 0, rotZ);
     }
 }
