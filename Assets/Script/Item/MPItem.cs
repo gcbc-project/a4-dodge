@@ -4,22 +4,22 @@ using UnityEngine;
 
 public class MPItem : MonoBehaviour, IItem
 {
-    // TODO : ManaSystem Å¬·¡½º ±¸Çö ÈÄ ÁÖ¼® Ç®±â
+    // TODO : ManaSystem í´ë˜ìŠ¤ êµ¬í˜„ í›„ ì£¼ì„ í’€ê¸°
     [SerializeField] private int _mp;
     //private ManaSystem _manaSystem;
 
     void IItem.OnTriggerEnter2D(Collider2D collision)
     {
-        // ÇÃ·¹ÀÌ¾î ÅÂ±×¿¡ ºÎµúÈ÷¸é
+        // í”Œë ˆì´ì–´ íƒœê·¸ì— ë¶€ë”ªíˆë©´
         if (collision.CompareTag("Player"))
         {
-            // ÇÃ·¹ÀÌ¾î ManaSystem °¡Á®¿À±â
+            // í”Œë ˆì´ì–´ ManaSystem ê°€ì ¸ì˜¤ê¸°
             //_manaSystem = collision.GetComponent<ManaSystem>();
 
-            // ¾ÆÀÌÅÛ È¿°ú Àû¿ë
+            // ì•„ì´í…œ íš¨ê³¼ ì ìš©
             //_manaSystem.ChangeMP(_mp);
 
-            // ¾ÆÀÌÅÛ ÆÄ±«
+            // ì•„ì´í…œ íŒŒê´´
             Destroy(gameObject);
         }
     }

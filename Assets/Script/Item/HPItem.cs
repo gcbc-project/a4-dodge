@@ -1,25 +1,25 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class HPItem : MonoBehaviour, IItem
 {
-    // TODO : HealthSystem Å¬·¡½º ±¸Çö ÈÄ ÁÖ¼® Ç®±â
+    // TODO : HealthSystem í´ë˜ìŠ¤ êµ¬í˜„ í›„ ì£¼ì„ í’€ê¸°
     [SerializeField] private int _hp;
     //private HealthSystem _healthSystem;
 
     void IItem.OnTriggerEnter2D(Collider2D collision)
     {
-        // ÇÃ·¹ÀÌ¾î ÅÂ±×¿¡ ºÎµúÈ÷¸é
+        // í”Œë ˆì´ì–´ íƒœê·¸ì— ë¶€ë”ªíˆë©´
         if (collision.CompareTag("Player"))
         {
-            // ÇÃ·¹ÀÌ¾î HealthSystem °¡Á®¿À±â
+            // í”Œë ˆì´ì–´ HealthSystem ê°€ì ¸ì˜¤ê¸°
             //_healthSystem = collision.GetComponent<HealthSystem>();
 
-            // ¾ÆÀÌÅÛ È¿°ú Àû¿ë
+            // ì•„ì´í…œ íš¨ê³¼ ì ìš©
             //_healthSystem.ChangeHP(_hp);
 
-            // ¾ÆÀÌÅÛ ÆÄ±«
+            // ì•„ì´í…œ íŒŒê´´
             Destroy(gameObject);
         }
     }

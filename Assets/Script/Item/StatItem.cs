@@ -4,23 +4,23 @@ using UnityEngine;
 
 public class StatItem : MonoBehaviour, IItem
 {
-    // TODO : Stat, CharacterStatHandler Å¬·¡½º ±¸Çö ÈÄ ÁÖ¼® Ç®±â
+    // TODO : _statModifiers, CharacterStatHandler í´ë˜ìŠ¤ êµ¬í˜„ í›„ ì£¼ì„ í’€ê¸°
     //[SerializeField] private Stat _effectStat;
     //private CharacterStatHandler _characterStatHandler;
 
     void IItem.OnTriggerEnter2D(Collider2D collision)
     {
-        // ÇÃ·¹ÀÌ¾î ÅÂ±×¿¡ ºÎµúÈ÷¸é
+        // í”Œë ˆì´ì–´ íƒœê·¸ì— ë¶€ë”ªíˆë©´
         if (collision.CompareTag("Player"))
         {
-            // ÇÃ·¹ÀÌ¾î Stat °¡Á®¿À±â
+            // í”Œë ˆì´ì–´ CharacterStatHandler ê°€ì ¸ì˜¤ê¸°
             //_characterStatHandler = collision.GetComponent<CharacterStatHandler>();
 
-            // ¾ÆÀÌÅÛ È¿°ú Àû¿ë
+            // ì•„ì´í…œ íš¨ê³¼ ì ìš©
             //_characterStatHandler._statModifiers.Add(_effectStat);
             //_characterStatHandler.UpdateStat();
 
-            // ¾ÆÀÌÅÛ ÆÄ±«
+            // ì•„ì´í…œ íŒŒê´´
             Destroy(gameObject);
         }
     }
