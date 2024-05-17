@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using UnityEngine;
 
 public class CharacterStatHandler : MonoBehaviour
 {
     public Stat CurrentStat { get; private set; }
     [SerializeField] private Stat _baseStat;
-    private List<Stat> _statModifiers = new List<Stat>();    
+    private List<Stat> _statModifiers = new List<Stat>();
 
     private void Awake()
     {
@@ -17,11 +18,15 @@ public class CharacterStatHandler : MonoBehaviour
     public void UpdateStat()
     {
         CurrentStat = _baseStat.DeepCopy();
+
+        _statModifiers.OrderBy(stat => stat.ChangeType);
+
         foreach (Stat stat in _statModifiers)
         {
-            switch(stat.ChangeType)
-            { 
+            switch (stat.ChangeType)
+            {
                 case StatChangeType.Add:
+                    CurrentStat.Add(stat);
                     break;
                 case StatChangeType.Multiple:
                     break;

@@ -10,7 +10,7 @@ public enum StatChangeType
 
 [Serializable]
 public class Stat
-{ 
+{
     public StatChangeType ChangeType;
     [Range(1, 100)] public int MaxHP;
     [Range(1, 100)] public int MaxMP;
@@ -34,5 +34,16 @@ public class Stat
         }
 
         return newStat;
+    }
+    public void Add(Stat stat)
+    {
+        this.MaxHP += stat.MaxHP;
+        this.MaxMP += stat.MaxMP;
+        this.Speed += stat.Speed;
+        this.DashCoolTime += stat.DashCoolTime;
+        if (stat.AttackData != null)
+        {
+            this.AttackData.Add(stat.AttackData);
+        }
     }
 }
