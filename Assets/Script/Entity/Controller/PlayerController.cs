@@ -19,7 +19,7 @@ public class PlayerController : EntityController
 
     private void OnDash(InputValue value)
     {
-        Debug.Log("Shift");
+        CallDashEvent();
     }
 
     private void OnAttack(InputValue value)
