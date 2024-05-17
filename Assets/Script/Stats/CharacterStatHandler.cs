@@ -29,8 +29,10 @@ public class CharacterStatHandler : MonoBehaviour
                     CurrentStat.Add(stat);
                     break;
                 case StatChangeType.Multiple:
+                    CurrentStat.Multiple(stat);
                     break;
                 case StatChangeType.Override:
+                    CurrentStat.Override(stat);
                     break;
 
             }

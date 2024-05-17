@@ -25,4 +25,16 @@ public class AttackSO : ScriptableObject
         this.ATK += attackData.ATK;
         this.CoolTime += attackData.CoolTime;
     }
+
+    public void Multiple(AttackSO attackData)
+    {
+        this.ATK *= attackData.ATK;
+        this.CoolTime *= attackData.CoolTime;
+    }
+
+    public void Override(AttackSO attackData)
+    {
+        this.ATK = attackData.ATK;
+        this.CoolTime = attackData.CoolTime;
+    }
 }

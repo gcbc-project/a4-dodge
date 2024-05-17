@@ -35,6 +35,7 @@ public class Stat
 
         return newStat;
     }
+
     public void Add(Stat stat)
     {
         this.MaxHP += stat.MaxHP;
@@ -44,6 +45,30 @@ public class Stat
         if (stat.AttackData != null)
         {
             this.AttackData.Add(stat.AttackData);
+        }
+    }
+
+    public void Multiple(Stat stat)
+    {
+        this.MaxHP *= stat.MaxHP;
+        this.MaxMP *= stat.MaxMP;
+        this.Speed *= stat.Speed;
+        this.DashCoolTime *= stat.DashCoolTime;
+        if (stat.AttackData != null)
+        {
+            this.AttackData.Multiple(stat.AttackData);
+        }
+    }
+
+    public void Override(Stat stat)
+    {
+        this.MaxHP = stat.MaxHP;
+        this.MaxMP = stat.MaxMP;
+        this.Speed = stat.Speed;
+        this.DashCoolTime = stat.DashCoolTime;
+        if (stat.AttackData != null)
+        {
+            this.AttackData.Override(stat.AttackData);
         }
     }
 }
