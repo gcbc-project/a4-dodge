@@ -14,7 +14,7 @@ public class HealthSystem : MonoBehaviour
     public event Action OnHealEvent; // 치유 이벤트
     public event Action OnDeathEvent; // 사망 이벤트
     public event Action OnInvincibilityEndEvent; // 무적 해제 이벤트
-    public float MaxHealth => _statHandler.CurrenStat.MaxHealth; // 최대 채력 = 현재 스탯의 최대 채력
+    public float MaxHP => _statHandler.CurrenStat.MaxHP; // 최대 채력 = 현재 스탯의 최대 채력
 
     private void Awake()
     {
@@ -23,7 +23,7 @@ public class HealthSystem : MonoBehaviour
 
     void Start()
     {
-        CurrnetHP = MaxHealth; // 첫 기동 시 현재 체력을 스탯의 최대 체력으로 초기화
+        CurrnetHP = MaxHP; // 첫 기동 시 현재 체력을 스탯의 최대 체력으로 초기화
     }
 
     // Update is called once per frame
@@ -46,7 +46,7 @@ public class HealthSystem : MonoBehaviour
 
         _timeSinceLastChange = 0f;
         CurrnetHP += change; // 현재 체력 증감 (양수 : 치유, 음수 : 데미지)
-        CurrnetHP = Mathf.Clamp(CurrnetHP, 0f, MaxHealth); // 현재 체력값을 0 ~ 최대치 사이의 값으로 변환 (0 미만일 경우 0, 최대치 초과일 경우 최대치)
+        CurrnetHP = Mathf.Clamp(CurrnetHP, 0f, MaxHP); // 현재 체력값을 0 ~ 최대치 사이의 값으로 변환 (0 미만일 경우 0, 최대치 초과일 경우 최대치)
 
         if (CurrnetHP <= 0f) // 체력 변경후 값이 0 이하인가? (죽었는가?)
         {
