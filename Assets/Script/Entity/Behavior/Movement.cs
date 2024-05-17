@@ -36,7 +36,7 @@ public class Movement : MonoBehaviour
     }
     private void ApplyDash()
     {
-        if (_isDashing && _dashTime < _characterStateHandler.CurrentStat.DashCoolTime)
+        if (_isDashing && _dashTime < _characterStateHandler.CurrentStat.DashHoldTime)
         {
             _dashTime += Time.fixedDeltaTime;
             if (_dashTime >= _characterStateHandler.CurrentStat.DashCoolTime)
