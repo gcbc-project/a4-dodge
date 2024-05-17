@@ -14,11 +14,11 @@ public class HealthSystem : MonoBehaviour
     public event Action OnHealEvent; // 치유 이벤트
     public event Action OnDeathEvent; // 사망 이벤트
     public event Action OnInvincibilityEndEvent; // 무적 해제 이벤트
-    public float MaxHP => _statHandler.CurrenStat.MaxHP; // 최대 채력 = 현재 스탯의 최대 채력
+    public float MaxHP => _statHandler.CurrentStat.MaxHP; // 최대 채력 = 현재 스탯의 최대 채력
 
     private void Awake()
     {
-        _statHandler = GetComponent<CharacterStatHandler>.();
+        _statHandler = GetComponent<CharacterStatHandler>();
     }
 
     void Start()
