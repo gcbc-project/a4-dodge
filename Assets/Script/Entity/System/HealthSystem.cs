@@ -3,24 +3,22 @@ using UnityEngine;
 
 public class HealthSystem : MonoBehaviour
 {
-    private EntityController _controller; 
+    [SerializeField] private float _healthChangeDelay = 0.5f; // 무적 시간 (피격 시 데미지를 무시하는 구간)
+    
+    private CharacterStatHandler _statHandler; // 현재 스탯 수치를 가져올 변수
+    private float _timeSinceLastChange = float.MaxValue; // 초기 마지막 피격 시간을 최대치로 설정 (바로 때릴 수 있게)
+    private bool _isAttacked = false; // 현재 피격 상태 초기화
+ 
     public float CurrnetHP { get; private set; } // 현재 체력
     public event Action OnDamageEvent; // 피격 이벤트
     public event Action OnHealEvent; // 치유 이벤트
     public event Action OnDeathEvent; // 사망 이벤트
     public event Action OnInvincibilityEndEvent; // 무적 해제 이벤트
-
-    // UML 이외의 변수 추가
-    [SerializeField] private float _healthChangeDelay = 0.5f; // 무적 시간 (피격 시 데미지를 무시하는 구간)
-    private CharacterStatHandler _statHandler; // 현재 스탯 수치를 가져올 변수
-    private float _timeSinceLastChange = float.MaxValue; // 초기 마지막 피격 시간을 최대치로 설정 (바로 때릴 수 있게)
-    private bool _isAttacked = false; // 현재 피격 상태 초기화
-
     public float MaxHealth => _statHandler.CurrenStat.MaxHealth; // 최대 채력 = 현재 스탯의 최대 채력
 
     private void Awake()
     {
-        _controller = GetComponent<EntityController>();
+        
     }
 
     void Start()
