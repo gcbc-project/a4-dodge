@@ -16,7 +16,7 @@ public class Stat
     [Range(1, 100)] public int MaxMP;
     [Range(1f, 20f)] public float Speed;
     [Range(1f, 10f)] public float DashSpeed;
-    [Range(1f, 5f)] public float DashCoolTime;
+    [Range(0f, 5f)] public float DashCoolTime;
     public AttackSO AttackData;
 
     public virtual Stat DeepCopy()
