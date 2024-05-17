@@ -9,14 +9,14 @@ public class Movement : MonoBehaviour
     private EntityController _controller;
     private CharacterStatHandler _characterStateHandler;
 
-    private readonly float _speed = 240f;
-    private float _dashSpeed = 1f;
+    private float _dashTime = 0f;
     private bool _isDashing = false;
     private Vector2 _direction;
 
     void Start()
     {
         _controller = GetComponent<EntityController>();
+        _characterStateHandler = GetComponent<CharacterStatHandler>();
         _rgbd = GetComponent<Rigidbody2D>();
 
         _controller.OnMoveEvent += Move;
@@ -31,15 +31,20 @@ public class Movement : MonoBehaviour
 
     private void ApplyMovement(Vector2 direction)
     {
-        _rgbd.velocity = direction * _speed * _dashSpeed * Time.fixedDeltaTime;
+        float currentDashSpeed = _isDashing ? _characterStateHandler.CurrentStat.DashSpeed : 1f;
+        _rgbd.velocity = direction * _characterStateHandler.CurrentStat.Speed * currentDashSpeed; // * Time.fixedDeltaTime
     }
     private void ApplyDash()
     {
-        if (!_isDashing)
+        if (_isDashing && _dashTime < _characterStateHandler.CurrentStat.DashCoolTime)
         {
-            StartCoroutine("DashTimer");
+            _dashTime += Time.fixedDeltaTime;
+            if (_dashTime >= _characterStateHandler.CurrentStat.DashCoolTime)
+            {
+                _dashTime = 0f;
+                _isDashing = false;
+            }
         }
-        _dashSpeed = _isDashing ? 3f : 1f;
     }
 
     private void Move(Vector2 direction)
@@ -50,12 +55,5 @@ public class Movement : MonoBehaviour
     private void Dash()
     {
         _isDashing = true;
-    }
-
-    private IEnumerator DashTimer()
-    {
-        yield return new WaitForSeconds(0.3f);
-        _isDashing = false;
-        StopCoroutine("DashTimer");
     }
 }
