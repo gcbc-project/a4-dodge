@@ -18,7 +18,7 @@ public class HealthSystem : MonoBehaviour
 
     private void Awake()
     {
-        
+        _statHandler = GetComponent<CharacterStatHandler>.();
     }
 
     void Start()
