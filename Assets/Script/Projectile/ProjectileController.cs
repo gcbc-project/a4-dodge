@@ -12,8 +12,6 @@ public class ProjectileController : MonoBehaviour
     {
         _rgbd = GetComponent<Rigidbody2D>();
     }
-
-    // Update is called once per frame
     void Update()
     {
         if (!_isReady)
