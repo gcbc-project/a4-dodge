@@ -23,7 +23,7 @@ public class AnimeController : MonoBehaviour
         }
     }
 
-    private void Attack()
+    private void Attack(AttackSO attackData)
     {
         _animator.SetTrigger(_isAttack);
     }

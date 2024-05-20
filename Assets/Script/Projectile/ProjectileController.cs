@@ -7,10 +7,12 @@ public class ProjectileController : MonoBehaviour
     private Vector2 _direction;
     private bool _isReady;
     private Rigidbody2D _rgbd;
+    private TrailRenderer _trailRenderer;
 
     private void Awake()
     {
         _rgbd = GetComponent<Rigidbody2D>();
+        _trailRenderer = GetComponentInChildren<TrailRenderer>();
     }
     void Update()
     {
@@ -46,6 +48,8 @@ public class ProjectileController : MonoBehaviour
         this._direction = dirction;
 
         UpdateProjectileSprite();
+
+        _trailRenderer.Clear();
 
         transform.right = this._direction;
         _isReady = true;

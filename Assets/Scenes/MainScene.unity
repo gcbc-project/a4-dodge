@@ -215,6 +215,68 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &550592442
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 550592443}
+  - component: {fileID: 550592445}
+  - component: {fileID: 550592444}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &550592443
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550592442}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.7488322, y: -0.09820752, z: 0.030812616}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &550592444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550592442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59b75c09472ece6489946d618a8a1ef2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Pools:
+  - Tag: EnergyBall
+    Prefab: {fileID: 1770121602168657881, guid: 04eca60ddb91f8c4a883009509eae799, type: 3}
+    Size: 20
+--- !u!114 &550592445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550592442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b43061e38486aa342926dc4adcb6e5de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerTag: Player
 --- !u!1 &560637709
 GameObject:
   m_ObjectHideFlags: 0
@@ -297,9 +359,10 @@ GameObject:
   - component: {fileID: 939433147}
   - component: {fileID: 939433151}
   - component: {fileID: 939433154}
+  - component: {fileID: 939433155}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -362,7 +425,7 @@ MonoBehaviour:
     DashSpeed: 3.3
     DashCoolTime: 1.15
     DashHoldTime: 0.14
-    AttackData: {fileID: 11400000, guid: 615dc61c0fa32224cb1f01f09e6a7e30, type: 2}
+    AttackData: {fileID: 11400000, guid: 0ff89c41b7fe88943998e74d37f7afee, type: 2}
 --- !u!114 &939433147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -495,6 +558,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8960d5f9d73c1ca43b9535ad575d66e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &939433155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 939433143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 920e4b78476ce3c43a6b3d361ca7c5f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _projectileSpawnPos: {fileID: 644948729}
 --- !u!1001 &1038824011
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -651,3 +727,4 @@ SceneRoots:
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 939433144}
+  - {fileID: 550592443}
