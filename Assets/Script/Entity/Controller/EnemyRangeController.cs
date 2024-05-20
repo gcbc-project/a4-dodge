@@ -4,14 +4,14 @@ using UnityEngine;
 public class EnemyRangeController : EnemyController
 {
     [SerializeField][Range(0f, 100f)] private float _shootRange;
-    private int _layerMaskTarget;    
+    private int _layerMaskTarget;
 
     protected override void Start()
     {
         base.Start();
-        _layerMaskTarget = _statController.CurrentStat.AttackData.Target;
+        _layerMaskTarget = _statHandler.CurrentStat.AttackData.Target;
     }
-        
+
     void FixedUpdate()
     {
         float distanceToTarget = DistanceToTarget();
