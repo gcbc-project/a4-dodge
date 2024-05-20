@@ -1,9 +1,8 @@
 using UnityEngine;
 
 public class EnemyController : EntityController
-{
-    GameManager gameManager;
-    protected Transform TargetPos { get; private set; }
+{    
+    protected Transform _targetPos { get; private set; }
     [SerializeField][Range(0f, 100f)] protected float _followRange;
 
     protected override void Awake()
@@ -12,18 +11,17 @@ public class EnemyController : EntityController
     }
 
     protected virtual void Start()
-    {
-        gameManager = GameManager.Instance;
-        TargetPos = gameManager.Player;
+    {        
+        _targetPos = GameManager.Instance.Player;
     }
 
     protected float DistanceToTarget()
     {
-        return Vector3.Distance(transform.position, TargetPos.position);
+        return Vector2.Distance(transform.position, _targetPos.position);
     }
 
     protected Vector2 DirectionToTarget()
     {
-        return (TargetPos.position - transform.position).normalized;
+        return (_targetPos.position - transform.position).normalized;
     }   
 }
