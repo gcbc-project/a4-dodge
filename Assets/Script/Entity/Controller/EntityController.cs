@@ -8,6 +8,13 @@ public abstract class EntityController : MonoBehaviour
   public event Action OnDashEvent;
   public event Action OnAttackEvent;
 
+  protected CharacterStatHandler _statController { get; private set; }
+
+    protected virtual void Awake()
+    { 
+        _statController = GetComponent<CharacterStatHandler>();
+    }
+
   public void CallMoveEvent(Vector2 direction)
   {
     OnMoveEvent?.Invoke(direction);
