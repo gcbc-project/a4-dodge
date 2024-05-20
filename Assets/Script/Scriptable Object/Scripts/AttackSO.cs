@@ -1,5 +1,4 @@
 using System;
-using Unity.VisualScripting;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "AttackSO", menuName = "Scriptable Object/Attack/Default", order = 0)]

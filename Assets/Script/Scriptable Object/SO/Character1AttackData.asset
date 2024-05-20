@@ -10,13 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bfcf6dfde2c55db4793ca828fa0ab83d, type: 3}
-  m_Name: RangeAttackSO
+  m_Name: Character1AttackData
   m_EditorClassIdentifier: 
   ATK: 5
-  CoolTime: 3
+  CoolTime: 1
   Target:
     serializedVersion: 2
     m_Bits: 0
-  ProjectileNum: 2
+  ProjectileNameTag: EnergyBall
+  ProjectileNum: 3
   ProjectileSize: 1
   ProjectileSpeed: 3
+  ProjectileAngle: 7
