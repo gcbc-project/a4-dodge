@@ -4,34 +4,34 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private static GameManager instance;
+    private static GameManager _instance;
 
     public ObjectPool ObjectPool {  get; private set; }
     public static GameManager Instance
     {
         get
         {
-            if (instance == null)
+            if (_instance == null)
             {
                 var obj = FindAnyObjectByType<GameManager>();
                 if(obj != null)
                 {
-                    instance = obj;
+                    _instance = obj;
                 }
                 else
                 {
-                    instance = new GameObject("GameManager").AddComponent<GameManager>();
+                    _instance = new GameObject("GameManager").AddComponent<GameManager>();
                 }
             }
-            return instance;
+            return _instance;
         }
     }
 
     private void Awake()
     {
-        if (instance == null)
+        if (_instance == null)
         {
-            instance = this;
+            _instance = this;
             DontDestroyOnLoad(gameObject);
         }
         else
