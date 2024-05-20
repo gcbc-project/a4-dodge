@@ -1,22 +1,43 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance;
-    
-    public Transform Player { get; private set; }
+    private static GameManager _instance;
     public ObjectPool ObjectPool { get; private set; }
-    [SerializeField] private string _playerTag;
-        
-    void Update()
+    public static GameManager Instance
     {
-        if (Instance != null)
+        get
+        {
+            if (_instance == null)
+            {
+                var obj = FindAnyObjectByType<GameManager>();
+                if (obj != null)
+                {
+                    _instance = obj;
+                }
+                else
+                {
+                    _instance = new GameObject("GameManager").AddComponent<GameManager>();
+                }
+            }
+            return _instance;
+        }
+    }
+    public Transform Player { get; private set; }
+    [SerializeField] private string _playerTag;
+
+    private void Awake()
+    {
+        if (_instance == null)
+        {
+            _instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
         {
             Destroy(gameObject);
+            return;
         }
-        Instance = this;
         Player = GameObject.FindGameObjectWithTag(_playerTag).transform;
         ObjectPool = GetComponent<ObjectPool>();
     }
