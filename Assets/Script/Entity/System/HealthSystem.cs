@@ -3,18 +3,18 @@ using UnityEngine;
 
 public class HealthSystem : MonoBehaviour
 {
-    [SerializeField] private float _healthChangeDelay = 0.5f; // ¹«Àû ½Ã°£ (ÇÇ°Ý ½Ã µ¥¹ÌÁö¸¦ ¹«½ÃÇÏ´Â ±¸°£)
+    [SerializeField] private float _healthChangeDelay = 0.5f; // ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ (ï¿½Ç°ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½)
     
-    public float CurrnetHP { get; private set; } // ÇöÀç Ã¼·Â
-    public event Action OnDamageEvent; // ÇÇ°Ý ÀÌº¥Æ®
-    public event Action OnHealEvent; // Ä¡À¯ ÀÌº¥Æ®
-    public event Action OnDeathEvent; // »ç¸Á ÀÌº¥Æ®
-    public event Action OnInvincibilityEndEvent; // ¹«Àû ÇØÁ¦ ÀÌº¥Æ®
-    public float MaxHP => _statHandler.CurrentStat.MaxHP; // ÃÖ´ë Ã¤·Â = ÇöÀç ½ºÅÈÀÇ ÃÖ´ë Ã¤·Â
+    public float CurrnetHP { get; private set; } // ï¿½ï¿½ï¿½ï¿½ Ã¼ï¿½ï¿½
+    public event Action OnDamageEvent; // ï¿½Ç°ï¿½ ï¿½Ìºï¿½Æ®
+    public event Action OnHealEvent; // Ä¡ï¿½ï¿½ ï¿½Ìºï¿½Æ®
+    public event Action OnDeathEvent; // ï¿½ï¿½ï¿½ ï¿½Ìºï¿½Æ®
+    public event Action OnInvincibilityEndEvent; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ìºï¿½Æ®
+    public float MaxHP => _statHandler.CurrentStat.MaxHP; // ï¿½Ö´ï¿½ Ã¤ï¿½ï¿½ = ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ Ã¤ï¿½ï¿½
 
-    private CharacterStatHandler _statHandler; // ÇöÀç ½ºÅÈ ¼öÄ¡¸¦ °¡Á®¿Ã º¯¼ö
-    private float _timeSinceLastChange = float.MaxValue; // ÃÊ±â ¸¶Áö¸· ÇÇ°Ý ½Ã°£À» ÃÖ´ëÄ¡·Î ¼³Á¤ (¹Ù·Î ¶§¸± ¼ö ÀÖ°Ô)
-    private bool _isAttacked = false; // ÇöÀç ÇÇ°Ý »óÅÂ ÃÊ±âÈ­
+    private CharacterStatHandler _statHandler; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    private float _timeSinceLastChange = float.MaxValue; // ï¿½Ê±ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ç°ï¿½ ï¿½Ã°ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ (ï¿½Ù·ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö°ï¿½)
+    private bool _isAttacked = false; // ï¿½ï¿½ï¿½ï¿½ ï¿½Ç°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­
  
     private void Awake()
     {
@@ -23,49 +23,49 @@ public class HealthSystem : MonoBehaviour
 
     void Start()
     {
-        CurrnetHP = MaxHP; // Ã¹ ±âµ¿ ½Ã ÇöÀç Ã¼·ÂÀ» ½ºÅÈÀÇ ÃÖ´ë Ã¼·ÂÀ¸·Î ÃÊ±âÈ­
+        CurrnetHP = MaxHP; // Ã¹ ï¿½âµ¿ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã¼ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ Ã¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (_isAttacked && _timeSinceLastChange < _healthChangeDelay) // ¸¶Áö¸· ÇÇ°Ý ½Ã°£ÀÌ ¹«Àû ½Ã°£ ÀÌ³»ÀÎ °æ¿ì (¹«Àû ½Ã°£ ¹ßµ¿ Áß)
+        if (_isAttacked && _timeSinceLastChange < _healthChangeDelay) // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ç°ï¿½ ï¿½Ã°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ ï¿½Ì³ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ (ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ ï¿½ßµï¿½ ï¿½ï¿½)
         {
-            _timeSinceLastChange += Time.deltaTime; // ¸¶Áö¸· ÇÇ°Ý ½Ã°£ Áõ°¡
-            if (_timeSinceLastChange > _healthChangeDelay) // ¸¶Áö¸· ÇÇ°Ý ½Ã°£ÀÌ ¹«Àû ½Ã°£À» ³Ñ¾î°£ °æ¿ì
+            _timeSinceLastChange += Time.deltaTime; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ç°ï¿½ ï¿½Ã°ï¿½ ï¿½ï¿½ï¿½ï¿½
+            if (_timeSinceLastChange > _healthChangeDelay) // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ç°ï¿½ ï¿½Ã°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ï¿½ï¿½ ï¿½Ñ¾î°£ ï¿½ï¿½ï¿½
             {
-                InvincibilityEnd(); // ¹«Àû ÇØÁ¦ ÀÌº¥Æ® È£Ãâ
-                _isAttacked = false; // ÇÇ°Ý »óÅÂ ÇØÁ¦
+                InvincibilityEnd(); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ìºï¿½Æ® È£ï¿½ï¿½
+                _isAttacked = false; // ï¿½Ç°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             }
         }
     }
 
-    public bool ChangeHP(float change) // Ã¼·Â Áõ°¨ ¸Þ¼­µå
+    public bool ChangeHP(float change) // Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½
     {
-        if (_timeSinceLastChange < _healthChangeDelay) return false; // ¹«Àû »óÅÂÀÎ°¡? Ã¼·Â º¯°æ ¾ÈÇÔ
+        if (_timeSinceLastChange < _healthChangeDelay) return false; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Î°ï¿½? Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
         _timeSinceLastChange = 0f;
-        CurrnetHP += change; // ÇöÀç Ã¼·Â Áõ°¨ (¾ç¼ö : Ä¡À¯, À½¼ö : µ¥¹ÌÁö)
-        CurrnetHP = Mathf.Clamp(CurrnetHP, 0f, MaxHP); // ÇöÀç Ã¼·Â°ªÀ» 0 ~ ÃÖ´ëÄ¡ »çÀÌÀÇ °ªÀ¸·Î º¯È¯ (0 ¹Ì¸¸ÀÏ °æ¿ì 0, ÃÖ´ëÄ¡ ÃÊ°úÀÏ °æ¿ì ÃÖ´ëÄ¡)
+        CurrnetHP += change; // ï¿½ï¿½ï¿½ï¿½ Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ (ï¿½ï¿½ï¿½ : Ä¡ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ : ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
+        CurrnetHP = Mathf.Clamp(CurrnetHP, 0f, MaxHP); // ï¿½ï¿½ï¿½ï¿½ Ã¼ï¿½Â°ï¿½ï¿½ï¿½ 0 ~ ï¿½Ö´ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯ (0 ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ 0, ï¿½Ö´ï¿½Ä¡ ï¿½Ê°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½Ä¡)
 
-        if (CurrnetHP <= 0f) // Ã¼·Â º¯°æÈÄ °ªÀÌ 0 ÀÌÇÏÀÎ°¡? (Á×¾ú´Â°¡?)
+        if (CurrnetHP <= 0f) // Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 0 ï¿½ï¿½ï¿½ï¿½ï¿½Î°ï¿½? (ï¿½×¾ï¿½ï¿½Â°ï¿½?)
         {
-            Death(); // »ç¸Á ÀÌº¥Æ® È£Ãâ
-            return true; // Ã¼·Â º¯°æ ÇßÀ½
+            Death(); // ï¿½ï¿½ï¿½ ï¿½Ìºï¿½Æ® È£ï¿½ï¿½
+            return true; // Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         }
-        if (change >= 0f) // º¯°æ °ªÀÌ ¾ç¼öÀÎ°¡? (Ä¡À¯)
+        if (change >= 0f) // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Î°ï¿½? (Ä¡ï¿½ï¿½)
         {
-            Heal(); // Ä¡À¯ ÀÌº¥Æ® È£Ãâ
+            Heal(); // Ä¡ï¿½ï¿½ ï¿½Ìºï¿½Æ® È£ï¿½ï¿½
         }
-        else // ¾Æ´Ñ°¡? (ÇöÀç Ã¼·Â 0 ÃÊ°ú && º¯°æ°ª À½¼ö)
+        else // ï¿½Æ´Ñ°ï¿½? (ï¿½ï¿½ï¿½ï¿½ Ã¼ï¿½ï¿½ 0 ï¿½Ê°ï¿½ && ï¿½ï¿½ï¿½æ°ª ï¿½ï¿½ï¿½ï¿½)
         {
-            Damage(); // µ¥¹ÌÁö ÀÌº¥Æ® È£Ãâ
-            _isAttacked = true; // ÇöÀç ÇÇ°Ý »óÅÂ ¼³Á¤
+            Damage(); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìºï¿½Æ® È£ï¿½ï¿½
+            _isAttacked = true; // ï¿½ï¿½ï¿½ï¿½ ï¿½Ç°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         }
-        return true; // Ã¼·Â º¯°æ ÇßÀ½
+        return true; // Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     }
 
-    // ÀÌº¥Æ® Ä¸½¶È­
+    // ï¿½Ìºï¿½Æ® Ä¸ï¿½ï¿½È­
     private void Death()
     {
         OnDeathEvent?.Invoke();

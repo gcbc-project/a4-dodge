@@ -6,9 +6,15 @@ public abstract class EntityController : MonoBehaviour
   public event Action<Vector2> OnMoveEvent;
   public event Action<Vector2> OnLookEvent;
   public event Action OnDashEvent;
-  public event Action OnAttackEvent;
+  public event Action<AttackSO> OnAttackEvent;
 
-  public void CallMoveEvent(Vector2 direction)
+    protected CharacterStatHandler _statHandler;
+
+    protected virtual void Awake()
+    {
+        _statHandler = GetComponent<CharacterStatHandler>();
+    }
+    public void CallMoveEvent(Vector2 direction)
   {
     OnMoveEvent?.Invoke(direction);
   }
@@ -23,8 +29,8 @@ public abstract class EntityController : MonoBehaviour
     OnDashEvent?.Invoke();
   }
 
-  public void CallAttackEvent()
+  public void CallAttackEvent(AttackSO attackData)
   {
-    OnAttackEvent?.Invoke();
+    OnAttackEvent?.Invoke(attackData);
   }
 }
