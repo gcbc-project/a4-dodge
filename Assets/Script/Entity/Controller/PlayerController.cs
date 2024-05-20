@@ -4,8 +4,9 @@ using UnityEngine.InputSystem;
 public class PlayerController : EntityController
 {
     private Camera _camera;
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         _camera = Camera.main;
     }
 
@@ -35,6 +36,6 @@ public class PlayerController : EntityController
 
     private void OnAttack(InputValue value)
     {
-        CallAttackEvent();
+        isAttacking = value.isPressed;
     }
 }
