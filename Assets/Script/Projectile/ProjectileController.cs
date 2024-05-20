@@ -3,7 +3,6 @@ using UnityEngine;
 public class ProjectileController : MonoBehaviour
 {
     [SerializeField] private LayerMask _levelCollisionLayer;
-
     private RangeAttackSO _attackData;
     private Vector2 _direction;
     private bool _isReady;
