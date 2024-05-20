@@ -41,6 +41,7 @@ public class EnemyRangeController : EnemyController
         }
         else
         {
+            CallDashEvent();
             CallLookEvent(direction);
             CallMoveEvent(direction);
         }
@@ -56,6 +57,8 @@ public class EnemyRangeController : EnemyController
         }
         else
         {
+            CallDashEvent();
+            CallLookEvent(direction);
             CallMoveEvent(direction);
         }
     }
