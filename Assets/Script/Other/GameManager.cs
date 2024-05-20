@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     private static GameManager _instance;
 
-    public ObjectPool ObjectPool {  get; private set; }
+    public ObjectPool ObjectPool {  get; private set; } // 이 부분 옮겨주세요
     public static GameManager Instance
     {
         get
@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-        ObjectPool = GetComponent<ObjectPool>();
+        ObjectPool = GetComponent<ObjectPool>(); // 이 부분 옮겨주세요.
     }
 
     // Start is called before the first frame update
