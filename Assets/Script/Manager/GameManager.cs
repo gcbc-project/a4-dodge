@@ -3,8 +3,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     private static GameManager _instance;
-
-    public ObjectPool ObjectPool {  get; private set; } // 이 부분 옮겨주세요
+    public ObjectPool ObjectPool { get; private set; }
     public static GameManager Instance
     {
         get
@@ -12,7 +11,7 @@ public class GameManager : MonoBehaviour
             if (_instance == null)
             {
                 var obj = FindAnyObjectByType<GameManager>();
-                if(obj != null)
+                if (obj != null)
                 {
                     _instance = obj;
                 }
@@ -24,6 +23,8 @@ public class GameManager : MonoBehaviour
             return _instance;
         }
     }
+    public Transform Player { get; private set; }
+    [SerializeField] private string _playerTag;
 
     private void Awake()
     {
@@ -37,6 +38,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-        ObjectPool = GetComponent<ObjectPool>(); // 이 부분 옮겨주세요.
+        Player = GameObject.FindGameObjectWithTag(_playerTag).transform;
+        ObjectPool = GetComponent<ObjectPool>();
     }
 }
