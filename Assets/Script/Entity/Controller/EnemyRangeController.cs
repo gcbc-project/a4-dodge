@@ -22,10 +22,14 @@ public class EnemyRangeController : EnemyController
 
     private void UpdateState(float distance, Vector2 direction)
     {
-
+        isAttacking = false;
         if (distance <= _followRange)
         {
             CheckIfNear(distance, direction);
+        }
+        else
+        {
+            CallMoveEvent(Vector2.zero);
         }
     }
 
@@ -37,6 +41,7 @@ public class EnemyRangeController : EnemyController
         }
         else
         {
+            CallLookEvent(direction);
             CallMoveEvent(direction);
         }
     }
@@ -59,5 +64,6 @@ public class EnemyRangeController : EnemyController
     {
         CallLookEvent(direction);
         CallMoveEvent(Vector2.zero);
+        isAttacking = true;
     }
 }
