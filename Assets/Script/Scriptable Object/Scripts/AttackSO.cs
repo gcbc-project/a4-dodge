@@ -20,19 +20,19 @@ public class AttackSO : ScriptableObject
         return newAttackSO;
     }
 
-    public void Add(AttackSO attackData)
+    public virtual void Add(AttackSO attackData)
     {
         this.ATK += attackData.ATK;
         this.CoolTime += attackData.CoolTime;
     }
 
-    public void Multiple(AttackSO attackData)
+    public virtual void Multiple(AttackSO attackData)
     {
         this.ATK *= attackData.ATK;
         this.CoolTime *= attackData.CoolTime;
     }
 
-    public void Override(AttackSO attackData)
+    public virtual void Override(AttackSO attackData)
     {
         this.ATK = attackData.ATK;
         this.CoolTime = attackData.CoolTime;

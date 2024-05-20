@@ -36,6 +36,6 @@ public class PlayerController : EntityController
 
     private void OnAttack(InputValue value)
     {
-        CallAttackEvent(_statHandler.CurrentStat.AttackData);
+        isAttacking = value.isPressed;
     }
 }

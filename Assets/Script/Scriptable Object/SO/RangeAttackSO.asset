@@ -18,4 +18,5 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   ProjectileNum: 2
-  ProjectileSize: 3
+  ProjectileSize: 1
+  ProjectileSpeed: 3
