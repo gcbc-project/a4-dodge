@@ -132,6 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 48836429}
+  - component: {fileID: 48836430}
   - component: {fileID: 48836428}
   - component: {fileID: 48836427}
   - component: {fileID: 48836426}
@@ -142,7 +143,6 @@ GameObject:
   - component: {fileID: 48836421}
   - component: {fileID: 48836420}
   - component: {fileID: 48836419}
-  - component: {fileID: 48836430}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
