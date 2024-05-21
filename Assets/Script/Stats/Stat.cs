@@ -12,11 +12,11 @@ public enum StatChangeType
 public class Stat
 {
     public StatChangeType ChangeType;
-    [Range(1, 100)] public int MaxHP;
-    [Range(1, 100)] public int MaxMP;
-    [Range(1f, 20f)] public float Speed;
-    [Range(1f, 10f)] public float DashSpeed;
-    [Range(1f, 5f)] public float DashCoolTime;
+    [Range(0, 100)] public int MaxHP;
+    [Range(0, 100)] public int MaxMP;
+    [Range(0f, 20f)] public float Speed;
+    [Range(0f, 10f)] public float DashSpeed;
+    [Range(0f, 5f)] public float DashCoolTime;
     [Range(0f, 5f)] public float DashHoldTime;
     public AttackSO AttackData;
 
