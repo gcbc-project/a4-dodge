@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class CharaSpawner : MonoBehaviour
 {
+    [SerializeField] private List<GameObject> _playerPool;
     // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+        Instantiate(_playerPool[DataManager.Instance.CharaID - 1]);
+    } 
 }

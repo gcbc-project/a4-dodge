@@ -38,7 +38,12 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-        Player = GameObject.FindGameObjectWithTag(_playerTag).transform;
+        
         ObjectPool = GetComponent<ObjectPool>();
+    }
+
+    private void Start()
+    {
+        Player = GameObject.FindGameObjectWithTag(_playerTag).transform;
     }
 }
