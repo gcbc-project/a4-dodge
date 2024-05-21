@@ -10,6 +10,7 @@ public class MeleeAttack : Attack
         MeleeAttackSO meleeAttackSO = attackData as MeleeAttackSO;
         Vector2 origin = transform.position;
         float halfAngle = meleeAttackSO.Angle * 0.5f;
+        
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(origin, meleeAttackSO.Reach, meleeAttackSO.Target);
 
         foreach (Collider2D target in hitEnemies)
@@ -20,7 +21,7 @@ public class MeleeAttack : Attack
 
             if (angleToTarget < halfAngle)
             {
-                Hit();
+                Hit(target, attackData);
                 continue;
             }
 
@@ -29,16 +30,17 @@ public class MeleeAttack : Attack
 
             if(hitMax.collider != null || hitMin.collider != null)
             {
-                Hit();
+                Hit(target, attackData);
             }
         }
 
-        _tempAttackData= attackData;
+        _tempAttackData = attackData;
     }
 
-    private void Hit()
+    private void Hit(Collider2D target, AttackSO attackData)
     {
-        Debug.Log("123");
+        HealthSystem healthSystem = target.gameObject.GetComponent<HealthSystem>();
+        healthSystem.ChangeHP(-(attackData.ATK));
     }
 
 
