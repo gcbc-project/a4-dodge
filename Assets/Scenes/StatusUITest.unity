@@ -764,8 +764,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _healthUI: {fileID: 2097312426}
-  _ManaUI: {fileID: 83609927}
-  _DashUI: {fileID: 654349159}
+  _manaUI: {fileID: 83609927}
+  _dashUI: {fileID: 654349159}
 --- !u!1 &949509746
 GameObject:
   m_ObjectHideFlags: 0
