@@ -25,21 +25,35 @@ public class RangeAttackSO : AttackSO
     public override void Add(AttackSO attackData)
     {
         base.Add(attackData);
-        this.ATK += attackData.ATK;
-        this.CoolTime += attackData.CoolTime;
+        RangeAttackSO newAttackSO = (RangeAttackSO)base.DeepCopy();
+
+        this.ProjectileNameTag += newAttackSO.ProjectileNameTag;
+        this.ProjectileNum += newAttackSO.ProjectileNum;
+        this.ProjectileSize += newAttackSO.ProjectileSize;
+        this.ProjectileSpeed += newAttackSO.ProjectileSpeed;
+        this.ProjectileAngle += newAttackSO.ProjectileAngle;
     }
 
     public override void Multiple(AttackSO attackData)
     {
         base.Multiple(attackData);
-        this.ATK *= attackData.ATK;
-        this.CoolTime *= attackData.CoolTime;
+        RangeAttackSO newAttackSO = (RangeAttackSO)base.DeepCopy();
+
+        this.ProjectileNum *= newAttackSO.ProjectileNum;
+        this.ProjectileSize *= newAttackSO.ProjectileSize;
+        this.ProjectileSpeed *= newAttackSO.ProjectileSpeed;
+        this.ProjectileAngle *= newAttackSO.ProjectileAngle;
     }
 
     public override void Override(AttackSO attackData)
     {
         base.Override(attackData);
-        this.ATK = attackData.ATK;
-        this.CoolTime = attackData.CoolTime;
+        RangeAttackSO newAttackSO = (RangeAttackSO)base.DeepCopy();
+
+        this.ProjectileNameTag = newAttackSO.ProjectileNameTag;
+        this.ProjectileNum = newAttackSO.ProjectileNum;
+        this.ProjectileSize = newAttackSO.ProjectileSize;
+        this.ProjectileSpeed = newAttackSO.ProjectileSpeed;
+        this.ProjectileAngle = newAttackSO.ProjectileAngle;
     }
 }
