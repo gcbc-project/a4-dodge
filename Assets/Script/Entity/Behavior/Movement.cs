@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    [HideInInspector]
-    public float DashTime = float.MaxValue;
     
     private Rigidbody2D _rgbd;
     private EntityController _controller;
@@ -11,6 +9,7 @@ public class Movement : MonoBehaviour
 
     private bool _isDashing = false;
     private Vector2 _direction;
+    private float _dashTime = float.MaxValue;
 
     private void Awake()
     {
@@ -38,17 +37,17 @@ public class Movement : MonoBehaviour
     }
     private void ApplyDash()
     {
-        if (_isDashing && DashTime < _characterStateHandler.CurrentStat.DashHoldTime)
+        if (_isDashing && _dashTime < _characterStateHandler.CurrentStat.DashHoldTime)
         {
-            DashTime += Time.fixedDeltaTime;
-            if (DashTime >= _characterStateHandler.CurrentStat.DashHoldTime)
+            _dashTime += Time.fixedDeltaTime;
+            if (_dashTime >= _characterStateHandler.CurrentStat.DashHoldTime)
             {
                 _isDashing = false;
             }
         }
         if (!_isDashing)
         {
-            DashTime += Time.fixedDeltaTime;
+            _dashTime += Time.fixedDeltaTime;
         }
     }
 
@@ -59,9 +58,9 @@ public class Movement : MonoBehaviour
 
     private void Dash()
     {
-        if (DashTime >= _characterStateHandler.CurrentStat.DashCoolTime + _characterStateHandler.CurrentStat.DashHoldTime)
+        if (_dashTime >= _characterStateHandler.CurrentStat.DashCoolTime + _characterStateHandler.CurrentStat.DashHoldTime)
         {
-            DashTime = 0f;
+            _dashTime = 0f;
             _isDashing = true;
         }
     }

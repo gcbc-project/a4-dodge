@@ -4,9 +4,8 @@ using UnityEngine.UI;
 public class StateUIController : MonoBehaviour
 {
     [SerializeField] private Image _healthUI;
-    [SerializeField] private Image _ManaUI;
-    [SerializeField] private Image _DashUI;
-    private Movement _movement;
+    [SerializeField] private Image _manaUI;
+    [SerializeField] private Image _dashUI;
 
     private CharacterStatHandler _characterStatHandler;
     private HealthSystem _healthSystem;
@@ -14,10 +13,10 @@ public class StateUIController : MonoBehaviour
     private EntityController _controller;
 
     private bool _isDashing = false;
+    private float _dashTime = 0f;
 
     private void Awake()
     {
-        _movement = GetComponent<Movement>();
         _characterStatHandler = GetComponent<CharacterStatHandler>();
         _healthSystem = GetComponent<HealthSystem>();
         _manaSystem = GetComponent<ManaSystem>();
@@ -34,10 +33,12 @@ public class StateUIController : MonoBehaviour
     {
         if (_isDashing)
         {
-            _DashUI.fillAmount = _movement.DashTime / (_characterStatHandler.CurrentStat.DashCoolTime + _characterStatHandler.CurrentStat.DashHoldTime);
-            _DashUI.fillAmount = Mathf.Clamp(_DashUI.fillAmount, 0f, 1f);
-            if (_movement.DashTime >= (_characterStatHandler.CurrentStat.DashCoolTime + _characterStatHandler.CurrentStat.DashHoldTime))
+            _dashTime += Time.fixedDeltaTime;
+            _dashUI.fillAmount = _dashTime / (_characterStatHandler.CurrentStat.DashCoolTime + _characterStatHandler.CurrentStat.DashHoldTime);
+            _dashUI.fillAmount = Mathf.Clamp(_dashUI.fillAmount, 0f, 1f);
+            if ( _dashTime >= (_characterStatHandler.CurrentStat.DashCoolTime + _characterStatHandler.CurrentStat.DashHoldTime))
             {
+                _dashTime = 0f;
                 _isDashing = false;
             }
         }
@@ -45,15 +46,16 @@ public class StateUIController : MonoBehaviour
 
     private void UpdateDashUI()
     {
-        if (_movement.DashTime <= 0f)
+        if (_dashTime <= 0f)
         {
+            _dashUI.fillAmount = 0f;
             _isDashing = true;
         }
     }
 
     private void UpdateManaUI(float currentMP)
     {
-        _ManaUI.fillAmount = currentMP / _manaSystem.MaxMP;
+        _manaUI.fillAmount = currentMP / _manaSystem.MaxMP;
     }
 
     private void UpdateHealthUI(float currentHP)
