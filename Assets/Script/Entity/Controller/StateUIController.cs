@@ -47,7 +47,6 @@ public class StateUIController : MonoBehaviour
     {
         if (_movement.DashTime <= 0f)
         {
-            //_DashUI.fillAmount = 0f;
             _isDashing = true;
         }
     }
