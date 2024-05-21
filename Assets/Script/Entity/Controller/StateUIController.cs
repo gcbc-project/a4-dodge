@@ -32,6 +32,7 @@ public class StateUIController : MonoBehaviour
     {
         if (dashTime <= 0f || dashTime == float.MaxValue)
         {
+            _dashUI.color = Color.white;
             _dashUI.fillAmount = 0f;
             _isDashing = true;
         }
@@ -43,6 +44,7 @@ public class StateUIController : MonoBehaviour
             if (dashTime >= (_characterStatHandler.CurrentStat.DashCoolTime + _characterStatHandler.CurrentStat.DashHoldTime))
             {
                 _isDashing = false;
+                _dashUI.color = Color.yellow;
             }
         }
     }
