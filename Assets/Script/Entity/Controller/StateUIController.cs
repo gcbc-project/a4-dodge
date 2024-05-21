@@ -8,6 +8,7 @@ public class StateUIController : MonoBehaviour
     [SerializeField] private Image _healthUI;
     [SerializeField] private Image _ManaUI;
     [SerializeField] private Image _DashUI;
+    private Movement _movement;
 
     private CharacterStatHandler _characterStatHandler;
     private HealthSystem _healthSystem;
@@ -15,10 +16,10 @@ public class StateUIController : MonoBehaviour
     private EntityController _controller;
 
     private bool _isDashing = false;
-    private float _dashTime = 0f;
 
     private void Awake()
     {
+        _movement = GetComponent<Movement>();
         _characterStatHandler = GetComponent<CharacterStatHandler>();
         _healthSystem = GetComponent<HealthSystem>();
         _manaSystem = GetComponent<ManaSystem>();
@@ -35,23 +36,20 @@ public class StateUIController : MonoBehaviour
     {
         if (_isDashing)
         {
-            _dashTime += Time.fixedDeltaTime;
-
-            _DashUI.fillAmount = _dashTime / _characterStatHandler.CurrentStat.DashCoolTime + _characterStatHandler.CurrentStat.DashHoldTime;
+            _DashUI.fillAmount = _movement.DashTime / (_characterStatHandler.CurrentStat.DashCoolTime + _characterStatHandler.CurrentStat.DashHoldTime);
             _DashUI.fillAmount = Mathf.Clamp(_DashUI.fillAmount, 0f, 1f);
-            if (_DashUI.fillAmount == 1f)
+            if (_movement.DashTime >= (_characterStatHandler.CurrentStat.DashCoolTime + _characterStatHandler.CurrentStat.DashHoldTime))
             {
                 _isDashing = false;
-                _dashTime = 0f;
             }
         }
     }
 
     private void UpdateDashUI()
     {
-        if (_dashTime <= 0f)
+        if (_movement.DashTime <= 0f)
         {
-            _DashUI.fillAmount = 0f;
+            //_DashUI.fillAmount = 0f;
             _isDashing = true;
         }
     }

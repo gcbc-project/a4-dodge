@@ -2,11 +2,13 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+    [HideInInspector]
+    public float DashTime = float.MaxValue;
+    
     private Rigidbody2D _rgbd;
     private EntityController _controller;
     private CharacterStatHandler _characterStateHandler;
 
-    private float _dashTime = float.MaxValue;
     private bool _isDashing = false;
     private Vector2 _direction;
 
@@ -36,17 +38,17 @@ public class Movement : MonoBehaviour
     }
     private void ApplyDash()
     {
-        if (_isDashing && _dashTime < _characterStateHandler.CurrentStat.DashHoldTime)
+        if (_isDashing && DashTime < _characterStateHandler.CurrentStat.DashHoldTime)
         {
-            _dashTime += Time.fixedDeltaTime;
-            if (_dashTime >= _characterStateHandler.CurrentStat.DashHoldTime)
+            DashTime += Time.fixedDeltaTime;
+            if (DashTime >= _characterStateHandler.CurrentStat.DashHoldTime)
             {
                 _isDashing = false;
             }
         }
         if (!_isDashing)
         {
-            _dashTime += Time.fixedDeltaTime;
+            DashTime += Time.fixedDeltaTime;
         }
     }
 
@@ -57,9 +59,9 @@ public class Movement : MonoBehaviour
 
     private void Dash()
     {
-        if (_dashTime >= _characterStateHandler.CurrentStat.DashCoolTime + _characterStateHandler.CurrentStat.DashHoldTime)
+        if (DashTime >= _characterStateHandler.CurrentStat.DashCoolTime + _characterStateHandler.CurrentStat.DashHoldTime)
         {
-            _dashTime = 0f;
+            DashTime = 0f;
             _isDashing = true;
         }
     }
