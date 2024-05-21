@@ -1,20 +1,22 @@
-using System;
+﻿using System;
 using UnityEngine;
 
 public class HealthSystem : MonoBehaviour
 {
-    [SerializeField] private float _healthChangeDelay = 0.5f; // ���� �ð� (�ǰ� �� �������� �����ϴ� ����)
-    
-    public float CurrnetHP { get; private set; } // ���� ü��
-    public event Action OnDamageEvent; // �ǰ� �̺�Ʈ
-    public event Action OnHealEvent; // ġ�� �̺�Ʈ
-    public event Action OnDeathEvent; // ��� �̺�Ʈ
-    public event Action OnInvincibilityEndEvent; // ���� ���� �̺�Ʈ
-    public float MaxHP => _statHandler.CurrentStat.MaxHP; // �ִ� ä�� = ���� ������ �ִ� ä��
 
-    private CharacterStatHandler _statHandler; // ���� ���� ��ġ�� ������ ����
-    private float _timeSinceLastChange = float.MaxValue; // �ʱ� ������ �ǰ� �ð��� �ִ�ġ�� ���� (�ٷ� ���� �� �ְ�)
-    private bool _isAttacked = false; // ���� �ǰ� ���� �ʱ�ȭ
+    [SerializeField] private float _healthChangeDelay = 0.5f;
+    
+    public float CurrentHP { get; private set; }
+    public event Action OnDamageEvent;
+    public event Action OnHealEvent;
+    public event Action OnDeathEvent;
+    public event Action OnInvincibilityEndEvent;
+    public event Action<float> OnHPChangeEvent;
+    public float MaxHP => _statHandler.CurrentStat.MaxHP;
+
+    private CharacterStatHandler _statHandler;
+    private float _timeSinceLastChange = float.MaxValue;
+    private bool _isAttacked = false;
  
     private void Awake()
     {
@@ -23,49 +25,46 @@ public class HealthSystem : MonoBehaviour
 
     void Start()
     {
-        CurrnetHP = MaxHP; // ù �⵿ �� ���� ü���� ������ �ִ� ü������ �ʱ�ȭ
+        CurrentHP = MaxHP;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (_isAttacked && _timeSinceLastChange < _healthChangeDelay) // ������ �ǰ� �ð��� ���� �ð� �̳��� ��� (���� �ð� �ߵ� ��)
+        if (_isAttacked && _timeSinceLastChange < _healthChangeDelay)
         {
-            _timeSinceLastChange += Time.deltaTime; // ������ �ǰ� �ð� ����
-            if (_timeSinceLastChange > _healthChangeDelay) // ������ �ǰ� �ð��� ���� �ð��� �Ѿ ���
+            _timeSinceLastChange += Time.deltaTime;
+            if (_timeSinceLastChange >= _healthChangeDelay)
             {
-                InvincibilityEnd(); // ���� ���� �̺�Ʈ ȣ��
-                _isAttacked = false; // �ǰ� ���� ����
+                InvincibilityEnd();
+                _isAttacked = false;
             }
         }
     }
 
-    public bool ChangeHP(float change) // ü�� ���� �޼���
+    public bool ChangeHP(float change)
     {
-        if (_timeSinceLastChange < _healthChangeDelay) return false; // ���� �����ΰ�? ü�� ���� ����
+        if (change > 0f || _timeSinceLastChange >= _healthChangeDelay)
+        {
+            if(change > 0f) Heal();
+            else if(_timeSinceLastChange >= _healthChangeDelay) _timeSinceLastChange = 0f;
+            CurrentHP += change;
+            CurrentHP = Mathf.Clamp(CurrentHP, 0f, MaxHP);
 
-        _timeSinceLastChange = 0f;
-        CurrnetHP += change; // ���� ü�� ���� (��� : ġ��, ���� : ������)
-        CurrnetHP = Mathf.Clamp(CurrnetHP, 0f, MaxHP); // ���� ü�°��� 0 ~ �ִ�ġ ������ ������ ��ȯ (0 �̸��� ��� 0, �ִ�ġ �ʰ��� ��� �ִ�ġ)
-
-        if (CurrnetHP <= 0f) // ü�� ������ ���� 0 �����ΰ�? (�׾��°�?)
-        {
-            Death(); // ��� �̺�Ʈ ȣ��
-            return true; // ü�� ���� ����
+            if (change <= 0f)
+            {
+                Damage();
+                _isAttacked = true;
+            }
+            else if (CurrentHP <= 0f)
+            {
+                Death();
+                return true;
+            }
+            OnHPChangeEvent?.Invoke(CurrentHP);
         }
-        if (change >= 0f) // ���� ���� ����ΰ�? (ġ��)
-        {
-            Heal(); // ġ�� �̺�Ʈ ȣ��
-        }
-        else // �ƴѰ�? (���� ü�� 0 �ʰ� && ���氪 ����)
-        {
-            Damage(); // ������ �̺�Ʈ ȣ��
-            _isAttacked = true; // ���� �ǰ� ���� ����
-        }
-        return true; // ü�� ���� ����
+        return false;
     }
-
-    // �̺�Ʈ ĸ��ȭ
     private void Death()
     {
         OnDeathEvent?.Invoke();

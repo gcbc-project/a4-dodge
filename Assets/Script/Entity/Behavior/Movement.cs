@@ -1,14 +1,18 @@
+using System;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+    public event Action<float> OnDashEvent;
+
     private Rigidbody2D _rgbd;
     private EntityController _controller;
     private CharacterStatHandler _characterStateHandler;
 
-    private float _dashTime = float.MaxValue;
     private bool _isDashing = false;
     private Vector2 _direction;
+    private float _dashTime = float.MaxValue;
 
     private void Awake()
     {
@@ -38,6 +42,7 @@ public class Movement : MonoBehaviour
     {
         if (_isDashing && _dashTime < _characterStateHandler.CurrentStat.DashHoldTime)
         {
+            OnDashEvent?.Invoke(_dashTime);
             _dashTime += Time.fixedDeltaTime;
             if (_dashTime >= _characterStateHandler.CurrentStat.DashHoldTime)
             {
@@ -47,6 +52,7 @@ public class Movement : MonoBehaviour
         if (!_isDashing)
         {
             _dashTime += Time.fixedDeltaTime;
+            OnDashEvent?.Invoke(_dashTime);
         }
     }
 

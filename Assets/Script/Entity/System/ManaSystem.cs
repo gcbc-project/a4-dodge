@@ -6,6 +6,7 @@ public class ManaSystem : MonoBehaviour
     public float CurrentMP {  get; private set; }
     public event Action OnUsed;
     public event Action OnFilled;
+    public event Action<float> OnMPChanged;
     public float MaxMP => _statHandler.CurrentStat.MaxMP;
 
     private CharacterStatHandler _statHandler;
@@ -33,6 +34,7 @@ public class ManaSystem : MonoBehaviour
         {
             Fill();
         }
+        OnMPChanged?.Invoke(CurrentMP);
     }
 
     private void Fill()
