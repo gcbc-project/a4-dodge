@@ -27,7 +27,6 @@ public class RangeAttackSO : AttackSO
         base.Add(attackData);
         RangeAttackSO newAttackSO = (RangeAttackSO)base.DeepCopy();
 
-        this.ProjectileNameTag += newAttackSO.ProjectileNameTag;
         this.ProjectileNum += newAttackSO.ProjectileNum;
         this.ProjectileSize += newAttackSO.ProjectileSize;
         this.ProjectileSpeed += newAttackSO.ProjectileSpeed;
@@ -50,7 +49,6 @@ public class RangeAttackSO : AttackSO
         base.Override(attackData);
         RangeAttackSO newAttackSO = (RangeAttackSO)base.DeepCopy();
 
-        this.ProjectileNameTag = newAttackSO.ProjectileNameTag;
         this.ProjectileNum = newAttackSO.ProjectileNum;
         this.ProjectileSize = newAttackSO.ProjectileSize;
         this.ProjectileSpeed = newAttackSO.ProjectileSpeed;

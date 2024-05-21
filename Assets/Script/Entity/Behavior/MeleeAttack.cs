@@ -8,27 +8,39 @@ public class MeleeAttack : Attack
     protected override void ExecuteAttack(AttackSO attackData)
     {
         MeleeAttackSO meleeAttackSO = attackData as MeleeAttackSO;
-
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(_direction, meleeAttackSO.Angle, meleeAttackSO.Target);
+        Vector2 origin = transform.position;
+        float halfAngle = meleeAttackSO.Angle * 0.5f;
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(origin, meleeAttackSO.Reach, meleeAttackSO.Target);
 
         foreach (Collider2D target in hitEnemies)
         {
-            Vector2 directionToTarget = ((Vector2)target.ClosestPoint(_direction) - _direction).normalized;
+            Vector2 targetOrigin = target.transform.position;
+            Vector2 directionToTarget = (targetOrigin - origin).normalized;
             float angleToTarget = Vector2.Angle(_direction, directionToTarget);
 
-            if (angleToTarget < meleeAttackSO.Angle / 2)
+            if (angleToTarget < halfAngle)
             {
-                Debug.Log("123");
+                Hit();
+                continue;
+            }
+
+            RaycastHit2D hitMax = Physics2D.Raycast(origin, Quaternion.Euler(0, 0, halfAngle) * _direction, meleeAttackSO.Reach, meleeAttackSO.Target);
+            RaycastHit2D hitMin = Physics2D.Raycast(origin, Quaternion.Euler(0, 0, -halfAngle) * _direction, meleeAttackSO.Reach, meleeAttackSO.Target);
+
+            if(hitMax.collider != null || hitMin.collider != null)
+            {
+                Hit();
             }
         }
 
-        //Collider2D[] hitEnemies = Physics2D.OverlapAreaAll(
-        //    CalculateSectorPoint(attackData,_direction, -1),
-        //    CalculateSectorPoint(attackData,_direction),
-        //    attackData.Target
-        //);
         _tempAttackData= attackData;
     }
+
+    private void Hit()
+    {
+        Debug.Log("123");
+    }
+
 
     private Vector2 CalculateSectorPoint(AttackSO attackData, Vector2 center, int direction = 1)
     {
