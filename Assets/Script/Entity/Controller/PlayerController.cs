@@ -2,15 +2,11 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerController : EntityController
-{
-    AudioSource audioSource;
-    public AudioClip audioClip;
-
+{  
     private Camera _camera;
     protected override void Awake()
     {
-        base.Awake();
-        audioSource = GetComponent<AudioSource>();
+        base.Awake();        
         _camera = Camera.main;
     }
 
@@ -40,7 +36,6 @@ public class PlayerController : EntityController
 
     private void OnAttack(InputValue value)
     {
-        isAttacking = value.isPressed;
-        audioSource.PlayOneShot(audioClip);
+        isAttacking = value.isPressed;        
     }
 }
