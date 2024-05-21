@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class HealthSystem : MonoBehaviour
 {
+
     [SerializeField] private float _healthChangeDelay = 0.5f;
     
     public float CurrentHP { get; private set; }
@@ -64,7 +65,6 @@ public class HealthSystem : MonoBehaviour
         }
         return false;
     }
-
     private void Death()
     {
         OnDeathEvent?.Invoke();
