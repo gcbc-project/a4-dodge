@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3747671254994479272}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LowerBody_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6012627199692456893}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FrontHair_10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7600228700465348337}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LowerBody_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 2132128112824365063}
   - component: {fileID: 7694397713487423163}
   - component: {fileID: 286782920466290427}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LeftLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -212,7 +212,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3469568715034291994}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FrontHair_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -245,7 +245,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5243064520354780112}
   - component: {fileID: 5655895820097639387}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -330,7 +330,7 @@ GameObject:
   - component: {fileID: 7577897788366075969}
   - component: {fileID: 5027896074713079809}
   - component: {fileID: 8432512533706929833}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: DashUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -403,7 +403,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6317225630233688960}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RightLeg_1_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -434,7 +434,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2025453242061147218}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LowerBody_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -467,7 +467,7 @@ GameObject:
   - component: {fileID: 5280486833075542805}
   - component: {fileID: 6276957525756555150}
   - component: {fileID: 7014464384470408700}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FrontHair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -581,7 +581,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7536751050310120737}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: UpperBody_1_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -612,7 +612,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 96425382409236266}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LeftArm_1_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -645,7 +645,7 @@ GameObject:
   - component: {fileID: 5226988968455856780}
   - component: {fileID: 1557480054308169457}
   - component: {fileID: 194744794942237571}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Eyes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -751,7 +751,7 @@ GameObject:
   - component: {fileID: 5525592568776075078}
   - component: {fileID: 8131798189859799558}
   - component: {fileID: 2386907652307040559}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -854,7 +854,7 @@ GameObject:
   - component: {fileID: 829160524342988847}
   - component: {fileID: 4896961193424288713}
   - component: {fileID: 1819969215608820660}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: ManaUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -927,7 +927,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6813014037243368188}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: UpperBody_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -961,7 +961,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7389670937540235052}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FrontHair_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -992,7 +992,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3684520865963421941}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FrontHair_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1025,7 +1025,7 @@ GameObject:
   - component: {fileID: 2995165314553827387}
   - component: {fileID: 1659840055330402745}
   - component: {fileID: 6910719126080602401}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BackHair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1132,7 +1132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6070690425783627127}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: NeckTie_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1164,6 +1164,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7222232165262177947}
   - component: {fileID: 4603799575777714567}
+  - component: {fileID: -7193528993461009706}
   - component: {fileID: 5473745550592327576}
   - component: {fileID: 2123300014297595692}
   - component: {fileID: 105514050546835761}
@@ -1174,7 +1175,8 @@ GameObject:
   - component: {fileID: 5573532992926452341}
   - component: {fileID: 7158914284070743277}
   - component: {fileID: 1948168979077199595}
-  m_Layer: 0
+  - component: {fileID: 1635395302182486863}
+  m_Layer: 6
   m_Name: Player(Melee)
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1226,6 +1228,41 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!70 &-7193528993461009706
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2695308487637350800}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0132491, y: 0.013249099}
+  m_Size: {x: 0.16, y: 0.7}
+  m_Direction: 0
 --- !u!95 &5473745550592327576
 Animator:
   serializedVersion: 5
@@ -1309,7 +1346,7 @@ MonoBehaviour:
     DashSpeed: 3.3
     DashCoolTime: 1.15
     DashHoldTime: 0.14
-    AttackData: {fileID: 11400000, guid: 232f5edf43246c641b496ba71ceb6f48, type: 2}
+    AttackData: {fileID: 11400000, guid: 635fd29121551764b87cff1853c59ede, type: 2}
 --- !u!114 &8257039607514522380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1388,6 +1425,18 @@ MonoBehaviour:
   _healthUI: {fileID: 1281721052827080757}
   _manaUI: {fileID: 1819969215608820660}
   _dashUI: {fileID: 8432512533706929833}
+--- !u!114 &1635395302182486863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2695308487637350800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c6fccd0aac765843b8c1909dd8e716b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2936168770538513063
 GameObject:
   m_ObjectHideFlags: 0
@@ -1397,7 +1446,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8036167473643676494}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BackHair_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1428,7 +1477,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1014200780538734285}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FrontHair_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1459,7 +1508,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1235859126093379994}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FrontHair_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1491,7 +1540,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 830603287257795320}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ProjectileSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1524,7 +1573,7 @@ GameObject:
   - component: {fileID: 64083037588264435}
   - component: {fileID: 489983558878954674}
   - component: {fileID: 8783261582037042973}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mouth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1627,7 +1676,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 841252108109325949}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BackHair_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1661,7 +1710,7 @@ GameObject:
   - component: {fileID: 8983303657044523594}
   - component: {fileID: 6233522559334154558}
   - component: {fileID: 2065145200923377195}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RightLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1765,7 +1814,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 217387891045294018}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Face
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1803,7 +1852,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8834165055183186151}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: NeckTie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1837,7 +1886,7 @@ GameObject:
   - component: {fileID: 7923659178155280346}
   - component: {fileID: 3481928624550029143}
   - component: {fileID: 1281721052827080757}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: HealthUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1910,7 +1959,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6109405451088341165}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FrontHair_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1942,7 +1991,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2360323602722996112}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LowerBody_1_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1973,7 +2022,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8962023313835211552}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FrontHair_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2005,7 +2054,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5177002128306892537}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LeftArm_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2037,7 +2086,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4396872702156331518}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BackHair_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2070,7 +2119,7 @@ GameObject:
   - component: {fileID: 8651269745600298795}
   - component: {fileID: 5517437413333681771}
   - component: {fileID: 5145113608890732017}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Necktie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2174,7 +2223,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1186949567462637141}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BackHair_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2206,7 +2255,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2398410093689470100}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RightLeg_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2238,7 +2287,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5035026162547961349}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Staff_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2269,7 +2318,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7791924967676823520}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RightArm_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2301,7 +2350,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6441697877467337831}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LeftLeg_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2333,7 +2382,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5484108848239535849}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FrontHair_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2364,7 +2413,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 474878412686875767}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FrontHair_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2398,7 +2447,7 @@ GameObject:
   - component: {fileID: 4668732104713540535}
   - component: {fileID: 2109679244185115678}
   - component: {fileID: 5056644342377650277}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FaceShape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2503,7 +2552,7 @@ GameObject:
   - component: {fileID: 1292763644361806696}
   - component: {fileID: 17098109647022329}
   - component: {fileID: 5241529183061626793}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: UpperBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2609,7 +2658,7 @@ GameObject:
   - component: {fileID: 3454214403430898719}
   - component: {fileID: 4474298153355749852}
   - component: {fileID: 2335028539085715874}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LowerBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2717,7 +2766,7 @@ GameObject:
   - component: {fileID: 809887755755750800}
   - component: {fileID: 8109542634582943699}
   - component: {fileID: 4074422713266257242}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Staff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2820,7 +2869,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8352936358959170154}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LeftLeg_1_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2851,7 +2900,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8770599024722002296}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FrontHair_11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2882,7 +2931,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1890023052031981498}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RightArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2914,7 +2963,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3769671856849476443}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: miho-yuki
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2967,7 +3016,7 @@ GameObject:
   - component: {fileID: 6931708580651115400}
   - component: {fileID: 3928569733120616080}
   - component: {fileID: 7584614115905120281}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LeftArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3071,7 +3120,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6838629157504602329}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3105,7 +3154,7 @@ GameObject:
   - component: {fileID: 6347745562812817600}
   - component: {fileID: 1709244090105230201}
   - component: {fileID: 5520752034972933322}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LightArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
