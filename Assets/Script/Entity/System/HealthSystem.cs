@@ -70,7 +70,8 @@ public class HealthSystem : MonoBehaviour
     private void Death()
     {
         OnDeathEvent?.Invoke();
-        if(gameObject.CompareTag("Enemy")) _enemySpawn.DestroyEnemy(gameObject);
+        if (gameObject.CompareTag("Enemy")) _enemySpawn.DestroyEnemy(gameObject);
+        else GameManager.Instance.GameOver();
     }
 
     private void Heal()

@@ -20,7 +20,7 @@ public class LevelManager : Singleton<LevelManager>
         _currentLevel++;
     }
 
-    public void LevelUP()
+    public void LevelUPEvent()
     {
         OnLevelUpEvent?.Invoke();
     }

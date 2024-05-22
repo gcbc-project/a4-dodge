@@ -7,26 +7,27 @@ public class EnemySpawn : MonoBehaviour
     private int _enemyCount;
     private void Start()
     {
-        SpawnEnemy(LevelManager.Instance.CurrentLevel);
+        LevelManager.Instance.OnLevelUpEvent += SpawnEnemy;
+        SpawnEnemy();
     }
 
     public void DestroyEnemy(GameObject entity)
     {
         Destroy(entity);
+        _enemyCount--;
         if(_enemyCount == 0)
         {
-            LevelManager.Instance.LevelUP();
-            SpawnEnemy(LevelManager.Instance.CurrentLevel);
+            LevelManager.Instance.LevelUPEvent();
         }
     }
 
-    public void SpawnEnemy(int currentLevel)
+    public void SpawnEnemy()
     {
-        for(int i = 0; i<currentLevel; i++)
+        for(int i = 0; i< LevelManager.Instance.CurrentLevel; i++)
         {
-            Instantiate(_enemyPrefab, new Vector3(5f, (currentLevel - 1) * -0.5f + (i * 1f), 0f), Quaternion.identity, transform);
-            Instantiate(_enemyPrefab, new Vector3(-5f, (currentLevel - 1) * -0.5f + (i * 1f), 0f), Quaternion.identity, transform);
+            Instantiate(_enemyPrefab, new Vector3(5f, (LevelManager.Instance.CurrentLevel - 1) * -0.5f + (i * 1f), 0f), Quaternion.identity, transform);
+            Instantiate(_enemyPrefab, new Vector3(-5f, (LevelManager.Instance.CurrentLevel - 1) * -0.5f + (i * 1f), 0f), Quaternion.identity, transform);
         }
-        _enemyCount = currentLevel * 2;
+        _enemyCount = LevelManager.Instance.CurrentLevel * 2;
     }
 }
