@@ -1,28 +1,13 @@
 using UnityEngine;
 
-public class AudioManager : MonoBehaviour
+public class AudioManager : Singleton<AudioManager>
 {
-    public static AudioManager Instance;
-
     AudioSource audioSource;
     public AudioClip audioClip;
-
-    private void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        audioSource.clip = this.audioClip;
+        audioSource.clip = audioClip;
         audioSource.loop = true;
         audioSource.Play();
     }
