@@ -314,7 +314,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _items:
   - ItemPrefab: {fileID: 0}
-    DropChance: 0
+    DropChance: 40
+  - ItemPrefab: {fileID: 3803492831772904631, guid: 84ecca0b76592fa4c83e120079e0255d, type: 3}
+    DropChance: 30
+  - ItemPrefab: {fileID: 8966808562166241236, guid: 15e32f63a24c7524c9c2271453ac2933, type: 3}
+    DropChance: 30
 --- !u!1 &2299572990052533748
 GameObject:
   m_ObjectHideFlags: 0
