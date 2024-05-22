@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 380774873467492130}
   - component: {fileID: 988733766533726524}
   - component: {fileID: 63996986326650450}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4843,7 +4843,7 @@ GameObject:
   - component: {fileID: 8111786850866927277}
   - component: {fileID: 1436749953855907014}
   - component: {fileID: 2355279934104047001}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: EnergeBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4940,7 +4940,7 @@ CircleCollider2D:
     m_Bits: 4294967295
   m_ContactCaptureLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 503
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -4964,7 +4964,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _levelCollisionLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
 --- !u!1 &5998636166945622430
 GameObject:
   m_ObjectHideFlags: 0
@@ -4974,7 +4974,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4539904851997560876}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5009,7 +5009,7 @@ GameObject:
   - component: {fileID: 3294485304108082142}
   - component: {fileID: 3253089051568552247}
   - component: {fileID: 5964108686636308821}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: MainSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5207,7 +5207,7 @@ GameObject:
   - component: {fileID: 6675126388838189533}
   - component: {fileID: 4525602129968419827}
   - component: {fileID: 2156260423382656687}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
