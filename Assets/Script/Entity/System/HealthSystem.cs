@@ -56,17 +56,18 @@ public class HealthSystem : MonoBehaviour
                 Damage();
                 _isAttacked = true;
             }
-            else if (CurrentHP <= 0f)
+            OnHPChangeEvent?.Invoke(CurrentHP);
+            if (CurrentHP <= 0f)
             {
                 Death();
                 return true;
             }
-            OnHPChangeEvent?.Invoke(CurrentHP);
         }
         return false;
     }
     private void Death()
     {
+        Debug.Log("죽음");
         OnDeathEvent?.Invoke();
     }
 
