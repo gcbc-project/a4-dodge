@@ -3,36 +3,42 @@ using UnityEngine;
 public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 {
     private static T _instance;
+    private static readonly object _lock = new object();
 
     public static T Instance
     {
         get
         {
-            if (_instance == null)
+            lock (_lock)
             {
-                _instance = (T)FindObjectOfType(typeof(T));
-
                 if (_instance == null)
                 {
-                    GameObject obj = new GameObject(typeof(T).Name, typeof(T));
-                    _instance = obj.AddComponent<T>();
+                    _instance = (T)FindObjectOfType(typeof(T));
+
+                    if (_instance == null)
+                    {
+                        GameObject obj = new GameObject(typeof(T).Name, typeof(T));
+                        _instance = obj.AddComponent<T>();
+                        DontDestroyOnLoad(obj);
+                    }
                 }
+
+                return _instance;
             }
-
-            return _instance;
         }
     }
 
-
-    public void Awake()
+    protected virtual void Awake()
     {
-        if (transform.parent != null && transform.root != null)
+        if (_instance == null)
         {
-            DontDestroyOnLoad(this.transform.root.gameObject);
+            _instance = this as T;
+            DontDestroyOnLoad(gameObject);
         }
-        else
+        else if (_instance != this)
         {
-            DontDestroyOnLoad(this.gameObject);
+            Destroy(gameObject);
         }
     }
+
 }
