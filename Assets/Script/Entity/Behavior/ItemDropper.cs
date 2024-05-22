@@ -27,9 +27,12 @@ public class ItemDropper : MonoBehaviour
         foreach (var item in _items)
         {
             weightSum += item.DropChance;
-            if (randomNumber < weightSum && item.ItemPrefab != null)
+            if (randomNumber < weightSum)
             {
-                Instantiate(item.ItemPrefab, transform.position, Quaternion.identity);
+                if(item.ItemPrefab != null)
+                {
+                    Instantiate(item.ItemPrefab, transform.position, Quaternion.identity);
+                }
                 break;
             }
         }
