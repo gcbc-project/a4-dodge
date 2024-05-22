@@ -4,7 +4,7 @@ public abstract class Attack : MonoBehaviour
 {
     protected EntityController _controller;
     protected Vector2 _direction;
-    private void Awake()
+    protected virtual void  Awake()
     {
         _controller = GetComponent<EntityController>();
         _controller.OnLookEvent += Aim;
