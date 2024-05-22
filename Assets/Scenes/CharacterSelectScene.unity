@@ -479,7 +479,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CharacterPrefabs:
   - {fileID: 1281834105997854664, guid: df87621f778111a449f38f25e93c82b9, type: 3}
-  - {fileID: 2695308487637350800, guid: a7934fb7f3eab184098aa628a7cb60fc, type: 3}
+  - {fileID: 2695308487637350800, guid: 8716ac482eb1d2e4e85d22efe8e2fb20, type: 3}
   ButtonPrefab: {fileID: 6579481357213394766, guid: fa3adb7e7de7f01468166ccea6b3f2c2, type: 3}
   ButtonContainer: {fileID: 658185982}
   RenderCameraPrefab: {fileID: 1943357721}
@@ -784,7 +784,7 @@ Transform:
   m_GameObject: {fileID: 2025798212}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-ㅎ  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

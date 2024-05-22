@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 4653092186268929163}
   - component: {fileID: 2804206995339329528}
   - component: {fileID: 9021283631675547241}
-  - component: {fileID: 5974562022555562208}
+  - component: {fileID: -5619323082050862373}
   m_Layer: 6
   m_Name: Player(Range)
   m_TagString: Player
@@ -285,7 +285,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _projectileSpawnPos: {fileID: 8578295263130000973}
---- !u!114 &5974562022555562208
+--- !u!114 &-5619323082050862373
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
