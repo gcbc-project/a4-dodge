@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -6,6 +7,7 @@ public class GameManager : Singleton<GameManager>
     private static GameManager _instance;
     public ObjectPool ObjectPool { get; private set; }
     public Transform Player { get; private set; }
+    public EnemySpawn EnemySpawn { get; private set; }
 
     protected override void Awake()
     {
@@ -25,7 +27,15 @@ public class GameManager : Singleton<GameManager>
     {
         FindObjectPool();
         CreateSelectedCharacter();
+        FindEnemySpawn();
+        EnemySpawn.SpawnEnemy(LevelManager.Instance.CurrentLevel);
     }
+
+    private void FindEnemySpawn()
+    {
+        EnemySpawn = FindObjectOfType<EnemySpawn>();
+    }
+
     private void FindObjectPool()
     {
         ObjectPool = FindObjectOfType<ObjectPool>();
