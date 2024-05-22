@@ -17,6 +17,7 @@ public class LevelManager : Singleton<LevelManager>
 
     public void IncreaseLevel()
     {
+        if (_currentLevel > 5) return;
         _currentLevel++;
     }
 
