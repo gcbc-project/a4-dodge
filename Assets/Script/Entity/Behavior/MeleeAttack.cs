@@ -8,6 +8,7 @@ public class MeleeAttack : Attack
     private MeshRenderer meshRenderer;
     private Material attackMaterial;
     [SerializeField] private GameObject _arm;
+    private AudioSource _audioSource;
 
     protected override void Awake()
     {
@@ -22,6 +23,7 @@ public class MeleeAttack : Attack
         attackMaterial.color = color;
         meshRenderer.material = attackMaterial;
         meshRenderer.sortingOrder = 2;
+        _audioSource = GetComponent<AudioSource>();
     }
     protected override void ExecuteAttack(AttackSO attackData)
     {
@@ -47,6 +49,7 @@ public class MeleeAttack : Attack
                 Hit(target, meleeAttackSO);
             }
         }
+        _audioSource.Play();
     }
     private void Hit(Collider2D target, MeleeAttackSO attackData)
     {

@@ -4,6 +4,13 @@ using UnityEngine;
 public class RangeAttack : Attack
 {
     [SerializeField] private Transform _projectileSpawnPos;
+    private AudioSource _audioSource;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        _audioSource = GetComponent<AudioSource>();
+    }
 
     protected override void ExecuteAttack(AttackSO attackData)
     {
@@ -17,6 +24,7 @@ public class RangeAttack : Attack
         for (int i = 0; i < projectileNum; i++)
         {
             float angle = minAngle + i * projectileAngle;
+            _audioSource.Play();
             CreateProjectile(rangeAttackSO, angle);
         }
     }

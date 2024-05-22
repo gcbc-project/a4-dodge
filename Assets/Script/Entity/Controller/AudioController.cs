@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class AudioController : MonoBehaviour
 {
-    private readonly int _isAttack = Animator.StringToHash("isAttack");
     private PlayerController _playerController;
 
     private AudioSource _audioSource;
@@ -22,7 +21,7 @@ public class AudioController : MonoBehaviour
 
     private void Attack(AttackSO attackData)
     {
-        _audioSource.PlayOneShot(_attackClip);
+        _audioSource.Play();
     }
 
     private void Dash()
