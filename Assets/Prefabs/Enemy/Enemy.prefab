@@ -52,6 +52,8 @@ GameObject:
   - component: {fileID: 3745081413956109971}
   - component: {fileID: 6153191176818165364}
   - component: {fileID: 4849944112041202077}
+  - component: {fileID: -6520495385423305623}
+  - component: {fileID: 4154241708282131397}
   m_Layer: 7
   m_Name: Enemy
   m_TagString: Untagged
@@ -286,6 +288,33 @@ MonoBehaviour:
   _healthUI: {fileID: 7236633037712995488}
   _manaUI: {fileID: 251092932557281050}
   _dashUI: {fileID: 7206630805309304725}
+--- !u!114 &-6520495385423305623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 646669075807297629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 121b7d952f720394da0c61633a4ef3dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4154241708282131397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 646669075807297629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a1d7b1f2192a524b8f3bbb107f15ac5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _items:
+  - ItemPrefab: {fileID: 0}
+    DropChance: 0
 --- !u!1 &2299572990052533748
 GameObject:
   m_ObjectHideFlags: 0
