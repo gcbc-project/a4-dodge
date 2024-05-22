@@ -5,16 +5,18 @@ using UnityEngine;
 public class FollowCamera : MonoBehaviour
 {
     private Camera _camera;    
-    public Transform player{ get; private set; }        
+    public Transform PlayerPosition { get; private set; }  
 
     void Start()
     {
         _camera = Camera.main;
-        player = GameManager.Instance.Player;            
+        PlayerPosition = GameManager.Instance.Player;            
     }
 
     void FixedUpdate()
     {
-        _camera.transform.position = new Vector3(player.position.x, player.position.y, -1);
+        Vector3 newPosition = Vector2.Lerp(_camera.transform.position, PlayerPosition.position, Time.deltaTime * 5f);
+        newPosition.z = _camera.transform.position.z;
+        _camera.transform.position = newPosition;
     }
 }
