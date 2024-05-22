@@ -3641,7 +3641,7 @@ GameObject:
   - component: {fileID: 1305175944}
   - component: {fileID: 1305175943}
   - component: {fileID: 1305175942}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5678,7 +5678,7 @@ GameObject:
   - component: {fileID: 1876028100}
   - component: {fileID: 1876028102}
   - component: {fileID: 1876028101}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
