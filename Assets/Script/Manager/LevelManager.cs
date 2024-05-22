@@ -8,15 +8,20 @@ public class LevelManager : Singleton<LevelManager>
     {
         get { return _currentLevel; }
     }
-    public event Action OnLevelChange;
+    public event Action OnLevelUpEvent;
     
     void Start()
     {
-        OnLevelChange += IncreaseLevel;
+        OnLevelUpEvent += IncreaseLevel;
     }
 
     public void IncreaseLevel()
     {
         _currentLevel++;
+    }
+
+    public void LevelUP()
+    {
+        OnLevelUpEvent?.Invoke();
     }
 }

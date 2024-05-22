@@ -28,7 +28,6 @@ public class GameManager : Singleton<GameManager>
         FindObjectPool();
         CreateSelectedCharacter();
         FindEnemySpawn();
-        EnemySpawn.SpawnEnemy(LevelManager.Instance.CurrentLevel);
     }
 
     private void FindEnemySpawn()
@@ -53,5 +52,10 @@ public class GameManager : Singleton<GameManager>
     public void LoadNextScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
+    }
+
+    public void GameOver()
+    {
+
     }
 }

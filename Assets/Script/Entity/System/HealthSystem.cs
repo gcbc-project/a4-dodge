@@ -14,6 +14,7 @@ public class HealthSystem : MonoBehaviour
     public event Action<float> OnHPChangeEvent;
     public float MaxHP => _statHandler.CurrentStat.MaxHP;
 
+    private EnemySpawn _enemySpawn;
     private CharacterStatHandler _statHandler;
     private float _timeSinceLastChange = float.MaxValue;
     private bool _isAttacked = false;
@@ -21,6 +22,7 @@ public class HealthSystem : MonoBehaviour
     private void Awake()
     {
         _statHandler = GetComponent<CharacterStatHandler>();
+        _enemySpawn = FindObjectOfType<EnemySpawn>();
     }
 
     void Start()
@@ -67,8 +69,8 @@ public class HealthSystem : MonoBehaviour
     }
     private void Death()
     {
-        Debug.Log("죽음");
         OnDeathEvent?.Invoke();
+        if(gameObject.CompareTag("Enemy")) _enemySpawn.DestroyEnemy(gameObject);
     }
 
     private void Heal()
