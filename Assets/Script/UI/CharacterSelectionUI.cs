@@ -89,8 +89,9 @@ public class CharacterSelectionUI : MonoBehaviour
 
     private void SelectCharacter(int index)
     {
-        // 캐릭터 선택 처리 (예: 선택된 캐릭터를 게임 시작 시 사용할 수 있게 함).
-        Debug.Log("Selected character index: " + index);
+        // 선택한 캐릭터의 프리팹을 DataManager에 저장
+        DataManager.Instance.SetSelectedCharacterPrefab(CharacterPrefabs[index]);
+        GameManager.Instance.LoadNextScene("MainScene");
     }
 
     private void OnDestroy()
