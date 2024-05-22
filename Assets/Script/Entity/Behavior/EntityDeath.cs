@@ -14,24 +14,20 @@ public class EntityDeath : MonoBehaviour
 
     private void OnDeath()
     {
-        Destroy(gameObject);
+        _rigidbody.velocity = Vector2.zero;
 
-        // Death 애니메이션을 넣을 지, 아래 코드를 사용할 지 선택
-        
-        //_rigidbody.velocity = Vector2.zero;
+        foreach (SpriteRenderer renderer in GetComponentsInChildren<SpriteRenderer>())
+        {
+            Color color = renderer.color;
+            color.a = 0.3f;
+            renderer.color = color;
+        }
 
-        //foreach (SpriteRenderer renderer in GetComponentsInChildren<SpriteRenderer>())
-        //{
-        //    Color color = renderer.color;
-        //    color.a = 0.3f;
-        //    renderer.color = color;
-        //}
+        foreach (Behaviour behaviour in GetComponentsInChildren<Behaviour>())
+        {
+            behaviour.enabled = false;
+        }
 
-        //foreach (Behaviour behaviour in GetComponentsInChildren<Behaviour>())
-        //{
-        //    behaviour.enabled = false;
-        //}
-
-        //Destroy(gameObject, 1f);
+        Destroy(gameObject, 0.5f);
     }
 }
