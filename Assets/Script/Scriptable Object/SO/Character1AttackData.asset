@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfcf6dfde2c55db4793ca828fa0ab83d, type: 3}
   m_Name: Character1AttackData
   m_EditorClassIdentifier: 
-  ATK: 50
+  ATK: 20
   CoolTime: 1
   Target:
     serializedVersion: 2
@@ -20,5 +20,5 @@ MonoBehaviour:
   ProjectileNameTag: EnergyBall
   ProjectileNum: 3
   ProjectileSize: 1
-  ProjectileSpeed: 3
-  ProjectileAngle: 7
+  ProjectileSpeed: 10
+  ProjectileAngle: 20
