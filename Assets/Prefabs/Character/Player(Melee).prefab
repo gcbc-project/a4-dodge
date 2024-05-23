@@ -661,11 +661,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e9426985c227284698c465b50a58241, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AttackClip: {fileID: 8300000, guid: 1d74880bed4586644a16a79a2d9dc8af, type: 3}
-  OnDashClip: {fileID: 8300000, guid: 5c7b6d4002009e842bd2621585546d19, type: 3}
-  OnHealthClip: {fileID: 8300000, guid: cfce0cea076109f478783201b2a9f57f, type: 3}
-  OnDamageClip: {fileID: 8300000, guid: 2b21ef916f6943c439b71a7c74568878, type: 3}
-  OnDeathClip: {fileID: 8300000, guid: 566d2ea6240b489479a6e9fd608c2621, type: 3}
+  AttackClip: {fileID: 8300000, guid: 6ea99ce0b16c3bc4bb1f8d60ea58c396, type: 3}
+  OnDashClip: {fileID: 8300000, guid: b6d213c4798381d45afc725c9bc92007, type: 3}
+  OnHealthClip: {fileID: 8300000, guid: e96caff3240a22344a24b85d80a5b00a, type: 3}
+  OnDamageClip: {fileID: 8300000, guid: 2230ddb9ba047d3488708e9e2f943f2d, type: 3}
+  OnDeathClip: {fileID: 8300000, guid: 0d86bc522f9b93e4cba45e57b4a5ab94, type: 3}
 --- !u!1 &3655755043875178725
 GameObject:
   m_ObjectHideFlags: 0
