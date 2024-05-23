@@ -25,33 +25,39 @@ public class RangeAttackSO : AttackSO
     public override void Add(AttackSO attackData)
     {
         base.Add(attackData);
-        RangeAttackSO newAttackSO = (RangeAttackSO)base.DeepCopy();
-
-        this.ProjectileNum += newAttackSO.ProjectileNum;
-        this.ProjectileSize += newAttackSO.ProjectileSize;
-        this.ProjectileSpeed += newAttackSO.ProjectileSpeed;
-        this.ProjectileAngle += newAttackSO.ProjectileAngle;
+        RangeAttackSO newAttackSO = attackData as RangeAttackSO;
+        if (newAttackSO != null)
+        {
+            this.ProjectileNum += newAttackSO.ProjectileNum;
+            this.ProjectileSize += newAttackSO.ProjectileSize;
+            this.ProjectileSpeed += newAttackSO.ProjectileSpeed;
+            this.ProjectileAngle += newAttackSO.ProjectileAngle;
+        }
     }
 
     public override void Multiple(AttackSO attackData)
     {
         base.Multiple(attackData);
-        RangeAttackSO newAttackSO = (RangeAttackSO)base.DeepCopy();
-
-        this.ProjectileNum *= newAttackSO.ProjectileNum;
-        this.ProjectileSize *= newAttackSO.ProjectileSize;
-        this.ProjectileSpeed *= newAttackSO.ProjectileSpeed;
-        this.ProjectileAngle *= newAttackSO.ProjectileAngle;
+        RangeAttackSO newAttackSO = attackData as RangeAttackSO;
+        if (newAttackSO != null)
+        {
+            this.ProjectileNum *= newAttackSO.ProjectileNum;
+            this.ProjectileSize *= newAttackSO.ProjectileSize;
+            this.ProjectileSpeed *= newAttackSO.ProjectileSpeed;
+            this.ProjectileAngle *= newAttackSO.ProjectileAngle;
+        }
     }
 
     public override void Override(AttackSO attackData)
     {
         base.Override(attackData);
-        RangeAttackSO newAttackSO = (RangeAttackSO)base.DeepCopy();
-
-        this.ProjectileNum = newAttackSO.ProjectileNum;
-        this.ProjectileSize = newAttackSO.ProjectileSize;
-        this.ProjectileSpeed = newAttackSO.ProjectileSpeed;
-        this.ProjectileAngle = newAttackSO.ProjectileAngle;
+        RangeAttackSO newAttackSO = attackData as RangeAttackSO;
+        if (newAttackSO != null)
+        {
+            this.ProjectileNum = newAttackSO.ProjectileNum;
+            this.ProjectileSize = newAttackSO.ProjectileSize;
+            this.ProjectileSpeed = newAttackSO.ProjectileSpeed;
+            this.ProjectileAngle = newAttackSO.ProjectileAngle;
+        }
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class StatItem : Item
@@ -7,9 +8,13 @@ public class StatItem : Item
 
     protected override void Effect(Collider2D collision)
     {
-        _characterStatHandler = collision.GetComponent<CharacterStatHandler>();
+        try
+        {
+            _characterStatHandler = collision.GetComponent<CharacterStatHandler>();
 
-        _characterStatHandler.AddStat(_effectStat);
-        _characterStatHandler.UpdateStat();
+            _characterStatHandler.AddStat(_effectStat);
+            _characterStatHandler.UpdateStat();
+        }
+        catch (NullReferenceException ex) { }
     }
 }

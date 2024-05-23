@@ -21,25 +21,32 @@ public class MeleeAttackSO : AttackSO
         base.Add(attackData);
         MeleeAttackSO newAttackSO = attackData as MeleeAttackSO;
 
-        this.Reach += newAttackSO.Reach;
-        this.Angle += newAttackSO.Angle;
+        if (newAttackSO != null)
+        {
+            this.Reach += newAttackSO.Reach;
+            this.Angle += newAttackSO.Angle;
+        }
     }
 
     public override void Multiple(AttackSO attackData)
     {
         base.Multiple(attackData);
         MeleeAttackSO newAttackSO = attackData as MeleeAttackSO;
-
-        this.Reach *= newAttackSO.Reach;
-        this.Angle *= newAttackSO.Angle;
+        if (newAttackSO != null)
+        {
+            this.Reach *= newAttackSO.Reach;
+            this.Angle *= newAttackSO.Angle;
+        }
     }
 
     public override void Override(AttackSO attackData)
     {
         base.Override(attackData);
         MeleeAttackSO newAttackSO = attackData as MeleeAttackSO;
-
-        this.Reach = newAttackSO.Reach;
-        this.Angle = newAttackSO.Angle;
+        if (newAttackSO != null)
+        {
+            this.Reach = newAttackSO.Reach;
+            this.Angle = newAttackSO.Angle;
+        }
     }
 }
