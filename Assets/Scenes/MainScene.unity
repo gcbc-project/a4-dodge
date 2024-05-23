@@ -4940,6 +4940,9 @@ MonoBehaviour:
   Pools:
   - Tag: EnergyBall
     Prefab: {fileID: 1770121602168657881, guid: 04eca60ddb91f8c4a883009509eae799, type: 3}
+    Size: 50
+  - Tag: FireBall
+    Prefab: {fileID: 1770121602168657881, guid: 0501524ab181ce54c8bb69d76539bdf5, type: 3}
     Size: 100
 --- !u!1001 &1705725225
 PrefabInstance:

@@ -17,7 +17,7 @@ MonoBehaviour:
   Target:
     serializedVersion: 2
     m_Bits: 64
-  ProjectileNameTag: EnergyBall
+  ProjectileNameTag: FireBall
   ProjectileNum: 1
   ProjectileSize: 1
   ProjectileSpeed: 5
