@@ -3,8 +3,37 @@ using UnityEngine;
 using TMPro;
 using System.Collections;
 
-public class LevelManager : Singleton<LevelManager>
+public class LevelManager : MonoBehaviour
 {
+    private static LevelManager _instance;
+    public static LevelManager Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = (LevelManager)FindObjectOfType(typeof(LevelManager));
+
+                if (_instance == null)
+                {
+                    GameObject obj = new GameObject(typeof(LevelManager).Name, typeof(LevelManager));
+                    _instance = obj.AddComponent<LevelManager>();
+                }
+            }
+
+            return _instance;
+        }
+    }
+
+    protected virtual void Awake()
+    {
+        if (_instance == null)
+        {
+            _instance = this as LevelManager;
+        }
+    }
+
+
     [SerializeField] private int _currentLevel;
     public int CurrentLevel
     {

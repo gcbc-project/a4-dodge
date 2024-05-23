@@ -153,8 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentLevel: 1
-  levelUpFontPath: 
-  levelUpColor: {r: 1, g: 1, b: 1, a: 1}
+  LevelText: {fileID: 481300794}
 --- !u!4 &344159599
 Transform:
   m_ObjectHideFlags: 0
