@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba1876d2bbdeede4e8c7ae8e5e82a2e0, type: 3}
   m_Name: EnemyMeleeAttackData
   m_EditorClassIdentifier: 
-  ATK: 5
-  CoolTime: 0.1
+  ATK: 10
+  CoolTime: 2
   Target:
     serializedVersion: 2
     m_Bits: 128
-  Reach: 3
-  Angle: 45
+  Reach: 2
+  Angle: 30

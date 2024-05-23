@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba1876d2bbdeede4e8c7ae8e5e82a2e0, type: 3}
   m_Name: Character2AttackData
   m_EditorClassIdentifier: 
-  ATK: 5
-  CoolTime: 0.1
+  ATK: 30
+  CoolTime: 1
   Target:
     serializedVersion: 2
     m_Bits: 128

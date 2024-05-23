@@ -442,8 +442,8 @@ MonoBehaviour:
   _baseStat:
     ChangeType: 2
     MaxHP: 100
-    MaxMP: 100
-    Speed: 2.24
+    MaxMP: 50
+    Speed: 3
     DashSpeed: 3.3
     DashCoolTime: 1.15
     DashHoldTime: 0.14

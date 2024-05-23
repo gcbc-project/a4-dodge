@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: EnemyAttackData
   m_EditorClassIdentifier: 
   ATK: 5
-  CoolTime: 1
+  CoolTime: 1.5
   Target:
     serializedVersion: 2
     m_Bits: 64
   ProjectileNameTag: EnergyBall
-  ProjectileNum: 3
+  ProjectileNum: 1
   ProjectileSize: 1
-  ProjectileSpeed: 3
+  ProjectileSpeed: 5
   ProjectileAngle: 7

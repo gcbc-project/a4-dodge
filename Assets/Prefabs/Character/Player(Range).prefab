@@ -187,9 +187,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _baseStat:
     ChangeType: 2
-    MaxHP: 100
+    MaxHP: 75
     MaxMP: 100
-    Speed: 2.24
+    Speed: 2.2
     DashSpeed: 3.3
     DashCoolTime: 1.15
     DashHoldTime: 0.14

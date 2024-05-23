@@ -190,11 +190,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _baseStat:
     ChangeType: 2
-    MaxHP: 100
-    MaxMP: 100
-    Speed: 1.39
+    MaxHP: 50
+    MaxMP: 0
+    Speed: 1.3
     DashSpeed: 3.3
-    DashCoolTime: 1.15
+    DashCoolTime: 2
     DashHoldTime: 0.14
     AttackData: {fileID: 11400000, guid: 2306827d3abc3c2408f228d0f7bed394, type: 2}
 --- !u!114 &4424975122384583098
