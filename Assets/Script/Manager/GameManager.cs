@@ -25,9 +25,12 @@ public class GameManager : Singleton<GameManager>
     }
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        FindObjectPool();
-        CreateSelectedCharacter();
-        FindEnemySpawn();
+        if (scene.name == "MainScene")
+        {
+            FindObjectPool();
+            CreateSelectedCharacter();
+            FindEnemySpawn();
+        }
     }
 
     private void FindEnemySpawn()
@@ -56,6 +59,6 @@ public class GameManager : Singleton<GameManager>
 
     public void GameOver()
     {
-
+        SceneManager.LoadScene("CharacterSelectScene");
     }
 }
