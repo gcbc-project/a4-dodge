@@ -329,7 +329,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!70 &-7193528993461009706
 CapsuleCollider2D:
@@ -444,8 +444,8 @@ MonoBehaviour:
   _baseStat:
     ChangeType: 2
     MaxHP: 100
-    MaxMP: 100
-    Speed: 2.24
+    MaxMP: 50
+    Speed: 3
     DashSpeed: 3.3
     DashCoolTime: 1.15
     DashHoldTime: 0.14
@@ -855,6 +855,18 @@ PrefabInstance:
     - target: {fileID: -7552582706839291426, guid: b7844a78113921d40971e68de2871408, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5453925970174940076, guid: b7844a78113921d40971e68de2871408, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4913301685032591960, guid: b7844a78113921d40971e68de2871408, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2147569718846269490, guid: b7844a78113921d40971e68de2871408, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

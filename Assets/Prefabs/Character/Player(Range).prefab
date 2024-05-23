@@ -75,7 +75,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!70 &-7994340465263591350
 CapsuleCollider2D:
@@ -189,9 +189,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _baseStat:
     ChangeType: 2
-    MaxHP: 100
+    MaxHP: 75
     MaxMP: 100
-    Speed: 2.24
+    Speed: 2.2
     DashSpeed: 3.3
     DashCoolTime: 1.15
     DashHoldTime: 0.14
@@ -931,6 +931,10 @@ PrefabInstance:
     - target: {fileID: -4913301685032591960, guid: be0cfb729b288214ea3e2e508c7fd425, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 97.707
+      objectReference: {fileID: 0}
+    - target: {fileID: -4913301685032591960, guid: be0cfb729b288214ea3e2e508c7fd425, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4387988545758847129, guid: be0cfb729b288214ea3e2e508c7fd425, type: 3}
       propertyPath: m_Layer
