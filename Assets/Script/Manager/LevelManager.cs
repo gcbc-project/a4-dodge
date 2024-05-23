@@ -42,6 +42,7 @@ public class LevelManager : MonoBehaviour
     public event Action OnLevelUpEvent;
 
     public TMP_Text LevelText;
+    public TMP_Text KillText;
 
     void Start()
     {
@@ -51,6 +52,10 @@ public class LevelManager : MonoBehaviour
         {
             StartCoroutine(DisplayLevelUpMessage());
         }
+    }
+    public void SetKillCount(int count)
+    {
+        KillText.text = "처치한 적 : " + count.ToString();
     }
 
     public void IncreaseLevel()
