@@ -15,7 +15,7 @@ public class EnemySpawn : MonoBehaviour
     public void DestroyEnemy(GameObject entity)
     {
         Destroy(entity);
-        if(--_enemyCount == 0)
+        if (--_enemyCount == 0)
         {
             LevelManager.Instance.LevelUPEvent();
         }
