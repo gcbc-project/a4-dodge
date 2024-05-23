@@ -44,7 +44,7 @@ public class StateUIController : MonoBehaviour
             if (dashTime >= (_characterStatHandler.CurrentStat.DashCoolTime + _characterStatHandler.CurrentStat.DashHoldTime))
             {
                 _isDashing = false;
-                _dashUI.color = Color.yellow;
+                _dashUI.color = Color.green;
             }
         }
     }
