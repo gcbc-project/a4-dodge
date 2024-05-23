@@ -16,6 +16,6 @@ MonoBehaviour:
   CoolTime: 2
   Target:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 64
   Reach: 2
   Angle: 30
