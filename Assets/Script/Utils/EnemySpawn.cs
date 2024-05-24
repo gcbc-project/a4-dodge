@@ -5,6 +5,7 @@ public class EnemySpawn : MonoBehaviour
 {
     [SerializeField] private GameObject _rangeEnemyPrefab;
     [SerializeField] private GameObject _meleeEnemyPrefab;
+    private int killCount = 0;
     private int _enemyCount;
     private void Start()
     {
@@ -15,7 +16,9 @@ public class EnemySpawn : MonoBehaviour
     public void DestroyEnemy(GameObject entity)
     {
         Destroy(entity);
-        if(--_enemyCount == 0)
+        killCount++;
+        LevelManager.Instance.SetKillCount(killCount);
+        if (--_enemyCount == 0)
         {
             LevelManager.Instance.LevelUPEvent();
         }
